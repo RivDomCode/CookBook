@@ -1,0 +1,18 @@
+.navbar {
+  background-color: $NavBg;
+  color: $NavText;
+  display: flex;
+  justify-content: space-between;
+  font-family: $mainFont;
+  border: 1px solid #efefef;
+  box-shadow: 2px 1px 2px #efefef;
+  padding: 12px;
+}
+
+.navbar__logo__img {
+  height: 40px;
+}
+
+.navbar__links__link:visited {
+  text-decoration: none;
+}

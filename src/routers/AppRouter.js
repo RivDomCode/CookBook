@@ -14,17 +14,16 @@ import { RecipeDetailsScreen } from '../components/RecipeDetailsScreen';
 export const AppRouter = () => {
     return (
         <>
-            <Navbar />
+
             <BrowserRouter>
+                <Navbar />
                 <Routes>
                     <Route path="/" element={<MyRecipesScreen />} />
                     <Route path="RecipeDetail" element={<RecipeDetailsScreen />} />
                     <Route path="APISearch" element={<APISearchScreen />} />
                     <Route path="NewRecipe" element={<NewRecipeScreen />} />
                     <Route path="*" element={<MyRecipesScreen />} />
-
                 </Routes>
-
             </BrowserRouter>
             <Footer />
         </>
