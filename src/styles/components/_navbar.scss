@@ -9,10 +9,37 @@
   padding: 12px;
 }
 
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo__titles {
+  color: $HightLight;
+
+  margin-left: 4px;
+  font-size: 18px;
+}
+
 .navbar__logo__img {
   height: 40px;
 }
 
-.navbar__links__link:visited {
-  text-decoration: none;
+.navbar__links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__links__link {
+  color: $NavText;
+  padding: 24px;
+}
+
+.header-img {
+  padding: 0 24px;
+  width: 100%;
+  height: 400px;
+  background: url(../../img/pexels-pixabay-276514.jpg) no-repeat center center
+    fixed;
+  background-size: cover;
 }
