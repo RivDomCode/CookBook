@@ -1,0 +1,24 @@
+.cardRecipe {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 500px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  border: 0.75px solid $shadow;
+  margin-right: 16px;
+}
+
+.cardRecipe img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.cardRecipe h3 {
+  color: $HightLight;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: auto;
+}

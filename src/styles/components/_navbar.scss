@@ -1,10 +1,9 @@
 .navbar {
-  background-color: $NavBg;
+  background-color: $shadow;
   color: $NavText;
   display: flex;
   justify-content: space-between;
   font-family: $mainFont;
-  border: 1px solid #efefef;
   box-shadow: 2px 1px 2px #efefef;
   padding: 12px;
 }
@@ -42,4 +41,6 @@
   background: url(../../img/pexels-pixabay-276514.jpg) no-repeat center center
     fixed;
   background-size: cover;
+  filter: contrast(120%);
+  box-shadow: 2px 2px 4px lightgray;
 }

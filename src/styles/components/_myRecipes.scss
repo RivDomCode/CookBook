@@ -1,0 +1,62 @@
+.my-recipes {
+  padding: 40px 80px;
+  font-family: $mainFont;
+}
+
+.my-recipes__filter {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.my-recipes__filter__card {
+  width: 250px;
+  height: 225px;
+  color: $NavBg;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px lightgray;
+}
+
+.meat {
+  background: url("../../img/my-recipes/paper.jpg");
+  background-size: cover;
+}
+
+.veggies {
+  background: url("../../img/my-recipes/wood.jpg");
+  background-size: cover;
+}
+
+.fish {
+  background: url("../../img/my-recipes/fabric.jpg");
+  background-size: cover;
+}
+
+.my-recipes__addButton {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.my-recipes__addButton__btn {
+  background-color: $HightLight;
+  font-family: $secFont;
+  font-weight: bold;
+  color: $NavBg;
+  font-size: 16px;
+  padding: 16px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px lightgray;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.fa-plus {
+  margin-right: 8px;
+}
+
+.my-recipes__recipesLayout {
+  display: flex;
+  justify-content: space-around;
+}
