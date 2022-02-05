@@ -15,6 +15,14 @@
   color: $NavBg;
   border-radius: 20px;
   box-shadow: 2px 2px 4px lightgray;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    border: 2px solid $HightLight;
+    color: $HightLight;
+  }
 }
 
 .meat {
@@ -50,6 +58,11 @@
   box-shadow: 2px 2px 4px lightgray;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.2s linear;
+
+  &:hover {
+    background-color: darken($color: $HightLight, $amount: 15);
+  }
 }
 
 .fa-plus {
