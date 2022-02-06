@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;700&family=Raleway:wght@300;500;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #efefef;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Be Vietnam Pro", sans-serif, impact;
+  box-shadow: 2px 1px 2px #efefef;
+  padding: 12px;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo__titles {
+  color: #5c9bdb;
+  margin-left: 4px;
+  font-size: 18px;
+}
+
+.navbar__logo__img {
+  height: 40px;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__links__link {
+  color: #000;
+  padding: 24px;
+}
+
+.header-img {
+  padding: 0 24px;
+  width: 100%;
+  height: 400px;
+  background: url(../../img/pexels-pixabay-276514.jpg) no-repeat center center fixed;
+  background-size: cover;
+  filter: contrast(120%);
+  box-shadow: 2px 2px 4px lightgray;
+}
+
+.my-recipes {
+  padding: 40px 80px;
+  font-family: "Be Vietnam Pro", sans-serif, impact;
+}
+
+.my-recipes__filter {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.my-recipes__filter__card {
+  width: 110px;
+  height: 115px;
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px lightgray;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.my-recipes__filter__card:hover {
+  transform: scale(1.1);
+}
+
+.meat {
+  background: url("../../img/my-recipes/paper.jpg");
+  background-size: cover;
+}
+
+.veggies {
+  background: url("../../img/my-recipes/wood.jpg");
+  background-size: cover;
+}
+
+.fish {
+  background: url("../../img/my-recipes/fabric.jpg");
+  background-size: cover;
+}
+
+.my-recipes__addButton {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.my-recipes__addButton__btn {
+  background-color: #5c9bdb;
+  font-family: "Raleway", sans-serif, impact;
+  font-weight: bold;
+  color: #fff;
+  font-size: 16px;
+  padding: 16px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px lightgray;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+.my-recipes__addButton__btn:hover {
+  background-color: #2a75c0;
+}
+
+.fa-plus {
+  margin-right: 8px;
+}
+
+.my-recipes__recipesLayout {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cardRecipe {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 500px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  border: 0.75px solid #efefef;
+  margin-right: 16px;
+  font-family: "Be Vietnam Pro", sans-serif, impact;
+  box-shadow: 2px 2px 4px lightgray;
+}
+
+.cardRecipe img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.cardRecipe__title {
+  color: #5c9bdb;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 8px;
+  text-align: center;
+}
+
+.cardRecipe__text {
+  padding: 8px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.cardRecipe_btnContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+  margin-top: 8px;
+}
+
+.delete-btn {
+  padding: 12px;
+  background-color: #f24141;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 2px 2px 4px lightgray;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  background-color: #d80f0f;
+}
+
+.fa-trash-alt,
+.fa-readme {
+  margin-right: 4px;
+}
+
+.readMore-btn {
+  padding: 12px;
+  background-color: #5c9bdb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 2px 2px 4px lightgray;
+  cursor: pointer;
+}
+.readMore-btn:hover {
+  background-color: #2a75c0;
+}
+
+.readLink {
+  color: #fff;
+}
+
+.footer {
+  background-color: #5c9bdb;
+  color: #fff;
+  font-family: "Raleway", sans-serif, impact;
+  text-align: center;
+  height: 50px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer p {
+  padding: 8px;
+}
+
+.footer a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-left: 8px;
+}

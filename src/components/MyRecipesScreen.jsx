@@ -14,6 +14,18 @@ export const MyRecipesScreen = () => {
         <div className="my-recipes__filter__card fish">
           <p>Fish</p>
         </div>
+        <div className="my-recipes__filter__card meat">
+          <p>Meat</p>
+        </div>
+        <div className="my-recipes__filter__card veggies">
+          <p>Veggies</p>
+        </div>
+        <div className="my-recipes__filter__card fish">
+          <p>Fish</p>
+        </div>
+        <div className="my-recipes__filter__card meat">
+          <p>Meat</p>
+        </div>
       </div>
       <div className="my-recipes__addButton">
         <button className="my-recipes__addButton__btn">

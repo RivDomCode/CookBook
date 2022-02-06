@@ -7,6 +7,8 @@
   margin-bottom: 40px;
   border: 0.75px solid $shadow;
   margin-right: 16px;
+  font-family: $mainFont;
+  box-shadow: 2px 2px 4px lightgray;
 }
 
 .cardRecipe img {
@@ -16,9 +18,63 @@
   border-radius: 20px 20px 0 0;
 }
 
-.cardRecipe h3 {
+.cardRecipe__title {
   color: $HightLight;
   font-weight: bold;
   text-transform: uppercase;
-  margin: auto;
+  padding: 8px;
+  text-align: center;
+}
+
+.cardRecipe__text {
+  padding: 8px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.cardRecipe_btnContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+  margin-top: 8px;
+}
+
+.delete-btn {
+  padding: 12px;
+  background-color: $red;
+  color: $NavBg;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 2px 2px 4px lightgray;
+  cursor: pointer;
+  &:hover {
+    background-color: darken($color: $red, $amount: 15);
+  }
+}
+
+.fa-trash-alt,
+.fa-readme {
+  margin-right: 4px;
+}
+
+.readMore-btn {
+  padding: 12px;
+  background-color: $HightLight;
+  color: $NavBg;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 2px 2px 4px lightgray;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($color: $HightLight, $amount: 15);
+  }
+}
+
+.readLink {
+  color: $NavBg;
 }

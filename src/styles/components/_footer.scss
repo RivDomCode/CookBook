@@ -1,0 +1,24 @@
+.footer {
+  background-color: $HightLight;
+  color: $NavBg;
+  font-family: $secFont;
+  text-align: center;
+  height: 50px;
+
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.footer p {
+  padding: 8px;
+}
+
+.footer a {
+  text-decoration: none;
+  font-size: 18px;
+  color: $NavText;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-left: 8px;
+}
