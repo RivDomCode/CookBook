@@ -8,7 +8,7 @@
 
 .navbar {
   background-color: #efefef;
-  color: #000;
+  color: #f8f7f3;
   display: flex;
   justify-content: space-between;
   font-family: "Be Vietnam Pro", sans-serif, impact;
@@ -54,6 +54,7 @@
 .my-recipes {
   padding: 40px 80px;
   font-family: "Be Vietnam Pro", sans-serif, impact;
+  background-color: #f8f7f3;
 }
 
 .my-recipes__filter {
@@ -96,6 +97,10 @@
   justify-content: center;
 }
 
+.add {
+  color: #fff;
+}
+
 .my-recipes__addButton__btn {
   background-color: #5c9bdb;
   font-family: "Raleway", sans-serif, impact;
@@ -134,6 +139,7 @@
   margin-right: 16px;
   font-family: "Be Vietnam Pro", sans-serif, impact;
   box-shadow: 2px 2px 4px lightgray;
+  background-color: #fff;
 }
 
 .cardRecipe img {
@@ -209,9 +215,9 @@
   font-family: "Raleway", sans-serif, impact;
   text-align: center;
   height: 50px;
-  position: absolute;
   width: 100%;
   bottom: 0;
+  left: 0;
 }
 
 .footer p {
@@ -225,4 +231,62 @@
   font-weight: 600;
   letter-spacing: 2px;
   margin-left: 8px;
+}
+
+.recipeDetail {
+  padding: 40px 80px;
+  font-family: "Be Vietnam Pro", sans-serif, impact;
+  display: flex;
+  background-color: #f8f7f3;
+}
+
+.recipeDetail__left {
+  width: 45%;
+}
+
+.recipeDetail__left img {
+  width: 100%;
+  object-fit: cover;
+  height: 50vh;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px lightgray;
+}
+
+.recipeDetail_right {
+  width: 45%;
+  padding: 8px;
+  margin-left: 40px;
+}
+
+.recipeDetail_right__title {
+  text-transform: uppercase;
+  color: #5c9bdb;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 8px;
+}
+
+.recipeDetail_right__subtitles {
+  padding: 8px;
+  font-weight: 700;
+}
+
+.recipeDetail_right ul {
+  list-style: none;
+  padding: 8px;
+}
+
+.recipeDetail_right__text {
+  padding: 8px;
+}
+
+.recipeDetail_right__container {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px;
+}
+
+.fa-arrow-alt-circle-left {
+  margin-right: 4px;
 }

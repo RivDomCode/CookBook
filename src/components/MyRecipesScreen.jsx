@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { CardRecipe } from "./CardRecipe";
 
 export const MyRecipesScreen = () => {
@@ -29,8 +30,12 @@ export const MyRecipesScreen = () => {
       </div>
       <div className="my-recipes__addButton">
         <button className="my-recipes__addButton__btn">
-          <i className="fas fa-plus"></i>
-          Add new Recipe
+          {" "}
+          <Link to="NewRecipe" className="add">
+            {" "}
+            <i className="fas fa-plus"></i>
+            Add new Recipe
+          </Link>
         </button>
       </div>
       <div className="my-recipes__recipesLayout">

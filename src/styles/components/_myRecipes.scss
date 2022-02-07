@@ -1,6 +1,7 @@
 .my-recipes {
   padding: 40px 80px;
   font-family: $mainFont;
+  background-color: $bg;
 }
 
 .my-recipes__filter {
@@ -42,6 +43,10 @@
   padding: 40px;
   display: flex;
   justify-content: center;
+}
+
+.add {
+  color: $NavBg;
 }
 
 .my-recipes__addButton__btn {
