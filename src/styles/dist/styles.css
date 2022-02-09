@@ -290,3 +290,140 @@
 .fa-arrow-alt-circle-left {
   margin-right: 4px;
 }
+
+.new-recipe {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: "Be Vietnam Pro", sans-serif, impact;
+  background-color: #f8f7f3;
+}
+
+.new-recipe__form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 60%;
+  padding: 24px;
+  background-color: #fff;
+  margin-top: 8px;
+  box-shadow: 2px 2px 4px lightgray;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.close-btn {
+  font-size: 32px;
+  font-weight: bolder;
+  width: 50px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #5c9bdb;
+  border: none;
+}
+
+.new-recipe__form h2 {
+  color: #5c9bdb;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.new-recipe__form__inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.new-recipe__form__inputs input,
+textarea {
+  border: none;
+  background-color: #f8f7f3;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px lightgray;
+  width: 70%;
+}
+
+textarea {
+  max-width: 70%;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #000;
+  font-family: "Be Vietnam Pro", sans-serif, impact;
+}
+
+.img-invisible {
+  display: none;
+}
+
+.new-recipe__form__btns {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin-top: 8px;
+}
+
+.addImg-btn {
+  padding: 12px;
+  background-color: #f24141;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 2px 2px 4px lightgray;
+  cursor: pointer;
+}
+.addImg-btn:hover {
+  background-color: #d80f0f;
+}
+
+.fa-image,
+.fa-cloud-download-alt {
+  margin-right: 4px;
+}
+
+.saveRecipe-btn {
+  padding: 12px;
+  background-color: #5c9bdb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 2px 2px 4px lightgray;
+  cursor: pointer;
+}
+.saveRecipe-btn:hover {
+  background-color: #2a75c0;
+}
+
+.new-recipe__form__img-container {
+  width: 70%;
+  height: 200px;
+  display: flex;
+  margin: auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.new-recipe__form__img-container img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 100%;
+  border-radius: 10px;
+}
