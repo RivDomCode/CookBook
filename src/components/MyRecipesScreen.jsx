@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CardRecipe } from "./CardRecipe";
+import { NewRecipeScreen } from "./NewRecipeScreen";
 
 export const MyRecipesScreen = () => {
   return (

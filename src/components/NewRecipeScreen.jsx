@@ -10,8 +10,8 @@ export const NewRecipeScreen = () => {
 
   return (
     <div className="new-recipe">
+      <button className="close">x</button>
       <form className="new-recipe__form">
-        <button className="close-btn">x</button>
         <div className="new-recipe__form__inputs">
           <h2>New Recipe</h2>
           <input type="text" placeholder="Recipe Title" />

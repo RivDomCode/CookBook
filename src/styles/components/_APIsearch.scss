@@ -4,6 +4,9 @@
   background-color: $bg;
   display: flex;
   flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  width: 100%;
 }
 .APIsearch h3 {
   color: $HightLight;
@@ -14,8 +17,49 @@
 }
 
 .APIsearch form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 60%;
+  padding: 24px;
   background-color: $NavBg;
-  //   width: 70%;
-  //   height: ;
+  margin-top: 8px;
+  box-shadow: 2px 2px 4px lightgray;
+  margin-bottom: 24px;
+  margin-top: 24px;
   margin: auto;
+  margin-bottom: 48px;
+}
+
+.APIsearch input {
+  border: none;
+  background-color: $bg;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px lightgray;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 24px;
+}
+
+.searchAPI-btn {
+  padding: 12px;
+  background-color: $HightLight;
+  color: $NavBg;
+  border: none;
+  border-radius: 10px;
+  width: 60%;
+  margin: auto;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 2px 2px 4px lightgray;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  &:hover {
+    background-color: darken($color: $HightLight, $amount: 15);
+  }
 }

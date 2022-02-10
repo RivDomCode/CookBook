@@ -11,11 +11,17 @@
 .navbar__logo {
   display: flex;
   align-items: center;
+  background-color: &bg;
+  box-shadow: 2px 2px 4px lightgray;
+  padding: 8px;
+  border-radius: 10px;
 }
 
 .navbar__logo__titles {
   color: $HightLight;
-
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
   margin-left: 4px;
   font-size: 18px;
 }
@@ -31,7 +37,17 @@
 
 .navbar__links__link {
   color: $NavText;
-  padding: 24px;
+  background-color: $bg;
+  padding: 14px;
+  margin-right: 8px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 4px lightgray;
+  &:hover {
+    color: $HightLight;
+    text-decoration: underline;
+  }
 }
 
 .header-img {
@@ -41,6 +57,6 @@
   background: url(../../img/pexels-pixabay-276514.jpg) no-repeat center center
     fixed;
   background-size: cover;
-  filter: contrast(120%);
+  filter: contrast(110%);
   box-shadow: 2px 2px 4px lightgray;
 }
