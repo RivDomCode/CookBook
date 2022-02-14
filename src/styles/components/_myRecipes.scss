@@ -18,10 +18,18 @@
   box-shadow: 2px 2px 4px lightgray;
   cursor: pointer;
   transition: all 0.2s ease;
-
+  display: grid;
+  place-items: center;
   &:hover {
     transform: scale(1.1);
   }
+}
+
+.my-recipes__filter__card p {
+  color: $NavText;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 18px;
 }
 
 .meat {
@@ -36,6 +44,11 @@
 
 .fish {
   background: url("../../img/my-recipes/fabric.jpg");
+  background-size: cover;
+}
+
+.pasta {
+  background: url("../../img/my-recipes/brick.jpg");
   background-size: cover;
 }
 

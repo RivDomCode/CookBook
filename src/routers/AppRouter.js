@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     BrowserRouter,
     Routes,
@@ -14,7 +14,6 @@ import { RecipeDetailsScreen } from '../components/RecipeDetailsScreen';
 export const AppRouter = () => {
     return (
         <>
-
             <BrowserRouter>
                 <Navbar />
                 <Routes>

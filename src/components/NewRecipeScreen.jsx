@@ -10,11 +10,19 @@ export const NewRecipeScreen = () => {
 
   return (
     <div className="new-recipe">
-      <button className="close">x</button>
       <form className="new-recipe__form">
         <div className="new-recipe__form__inputs">
           <h2>New Recipe</h2>
           <input type="text" placeholder="Recipe Title" />
+          <select>
+            <option selected disabled>
+              Choose category
+            </option>
+            <option value="Meat">Meat</option>
+            <option value="Veggies">Veggies</option>
+            <option value="fish">Fish</option>
+            <option value="pasta">Pasta</option>
+          </select>
           <input type="text" placeholder="Ingredients" />
           <textarea type="text" placeholder="Elaboration" />
           <input type="file" className="img-invisible" ref={addImg} />{" "}

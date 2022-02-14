@@ -7,10 +7,12 @@ export const Navbar = () => {
   return (
     <header>
       <nav className="navbar">
-        <div className="navbar__logo">
-          <img src={cookLogo} alt="logo" className="navbar__logo__img" />
-          <span className="navbar__logo__titles">The CookBook</span>
-        </div>
+        <Link to="/">
+          <div className="navbar__logo">
+            <img src={cookLogo} alt="logo" className="navbar__logo__img" />
+            <span className="navbar__logo__titles">The CookBook</span>
+          </div>
+        </Link>
         <div className="navbar__links">
           <Link to="/">
             <span className="navbar__links__link">My Recipes</span>

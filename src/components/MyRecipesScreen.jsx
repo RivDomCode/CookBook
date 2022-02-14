@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CardRecipe } from "./CardRecipe";
-import { NewRecipeScreen } from "./NewRecipeScreen";
 
 export const MyRecipesScreen = () => {
   return (
@@ -16,8 +15,8 @@ export const MyRecipesScreen = () => {
         <div className="my-recipes__filter__card fish">
           <p>Fish</p>
         </div>
-        <div className="my-recipes__filter__card meat">
-          <p>Meat</p>
+        <div className="my-recipes__filter__card pasta">
+          <p>Pasta</p>
         </div>
         <div className="my-recipes__filter__card veggies">
           <p>Veggies</p>
