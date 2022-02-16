@@ -39,13 +39,13 @@ export const NewRecipeScreen = () => {
           </div>
           <div className="new-recipe__form__btns">
             <button className="addImg-btn" onClick={handleAddImg}>
-              <i class="far fa-image"></i>Add an Image
+              <i className="far fa-image"></i>Add an Image
             </button>
             <button className="saveRecipe-btn">
-              <i class="fas fa-cloud-download-alt"></i>Save Recipe
+              <i className="fas fa-cloud-download-alt"></i>Save Recipe
             </button>
             <button className="cancel-btn" onClick={closeModal}>
-              <i class="fa-solid fa-rectangle-xmark"></i>Cancel
+              <i className="fa-solid fa-rectangle-xmark"></i>Cancel
             </button>
           </div>
         </div>
