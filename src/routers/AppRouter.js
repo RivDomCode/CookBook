@@ -16,6 +16,7 @@ export const AppRouter = () => {
         <>
             <BrowserRouter>
                 <Navbar />
+                <NewRecipeScreen />
                 <Routes>
                     <Route path="/" element={<MyRecipesScreen />} />
                     <Route path="RecipeDetail" element={<RecipeDetailsScreen />} />

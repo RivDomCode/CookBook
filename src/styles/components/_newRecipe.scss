@@ -1,10 +1,21 @@
 .new-recipe {
+  position: fixed;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  height: 100%;
+  display: grid;
+  place-items: center;
   font-family: $mainFont;
-  background-color: $bg;
+  background-color: rgba(248, 247, 243, 0.8);
   padding: 40px 80px;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+
+.show-new-recipe {
+  visibility: visible;
+  z-index: 10;
 }
 
 .new-recipe__form {
@@ -18,6 +29,7 @@
   box-shadow: 2px 2px 4px lightgray;
   margin-bottom: 24px;
   margin-top: 24px;
+  padding-bottom: 48px;
 }
 
 .new-recipe__form h2 {
@@ -80,7 +92,7 @@ textarea::placeholder {
 .new-recipe__form__btns {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 70%;
   margin-top: 8px;
 }
 
@@ -100,7 +112,8 @@ textarea::placeholder {
 }
 
 .fa-image,
-.fa-cloud-download-alt {
+.fa-cloud-download-alt,
+.fa-rectangle-xmark {
   margin-right: 4px;
 }
 
@@ -117,6 +130,22 @@ textarea::placeholder {
 
   &:hover {
     background-color: darken($color: $HightLight, $amount: 15);
+  }
+}
+
+.cancel-btn {
+  padding: 12px;
+  background-color: $NavText;
+  color: $NavBg;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 2px 2px 4px lightgray;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($color: $NavText, $amount: 25);
   }
 }
 

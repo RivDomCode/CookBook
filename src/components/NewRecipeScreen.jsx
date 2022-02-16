@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useGlobalContext } from "../context/appContext";
 
 export const NewRecipeScreen = () => {
   const addImg = useRef();
@@ -8,8 +9,12 @@ export const NewRecipeScreen = () => {
     addImg.current.click();
   };
 
+  const { isActive, closeModal } = useGlobalContext();
+
   return (
-    <div className="new-recipe">
+    <div
+      className={`${isActive ? "new-recipe show-new-recipe" : "new-recipe"}`}
+    >
       <form className="new-recipe__form">
         <div className="new-recipe__form__inputs">
           <h2>New Recipe</h2>
@@ -38,6 +43,9 @@ export const NewRecipeScreen = () => {
             </button>
             <button className="saveRecipe-btn">
               <i class="fas fa-cloud-download-alt"></i>Save Recipe
+            </button>
+            <button className="cancel-btn" onClick={closeModal}>
+              <i class="fa-solid fa-rectangle-xmark"></i>Cancel
             </button>
           </div>
         </div>
