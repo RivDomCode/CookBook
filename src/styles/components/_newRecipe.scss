@@ -57,7 +57,11 @@ textarea,
 select {
   border: none;
   background-color: $bg;
+  font-family: $mainFont;
   padding: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 16px;
   margin-bottom: 12px;
   border-radius: 10px;
   box-shadow: 2px 2px 4px lightgray;
@@ -95,23 +99,6 @@ textarea::placeholder {
   width: 70%;
   margin-top: 8px;
 }
-
-.addImg-btn {
-  padding: 12px;
-  background-color: $red;
-  color: $NavBg;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 500;
-  box-shadow: 2px 2px 4px lightgray;
-  cursor: pointer;
-  &:hover {
-    background-color: darken($color: $red, $amount: 15);
-  }
-}
-
-.fa-image,
 .fa-cloud-download-alt,
 .fa-rectangle-xmark {
   margin-right: 4px;
@@ -120,6 +107,7 @@ textarea::placeholder {
 .saveRecipe-btn {
   padding: 12px;
   background-color: $HightLight;
+  width: 48%;
   color: $NavBg;
   border: none;
   border-radius: 10px;
@@ -129,13 +117,14 @@ textarea::placeholder {
   cursor: pointer;
 
   &:hover {
-    background-color: darken($color: $HightLight, $amount: 15);
+    background-color: darken($color: $HightLight, $amount: 19);
   }
 }
 
 .cancel-btn {
   padding: 12px;
-  background-color: $NavText;
+  width: 48%;
+  background-color: $red;
   color: $NavBg;
   border: none;
   border-radius: 10px;
@@ -145,22 +134,6 @@ textarea::placeholder {
   cursor: pointer;
 
   &:hover {
-    background-color: lighten($color: $NavText, $amount: 25);
+    background-color: darken($color: $red, $amount: 25);
   }
-}
-
-.new-recipe__form__img-container {
-  width: 70%;
-  height: 200px;
-  display: flex;
-  margin: auto;
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
-
-.new-recipe__form__img-container img {
-  width: 100%;
-  object-fit: cover;
-  max-height: 100%;
-  border-radius: 10px;
 }

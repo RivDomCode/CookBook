@@ -1,37 +1,37 @@
-import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import { useGlobalContext } from "../context/appContext";
-import { useForm } from "../hooks/useForm";
 import { CardRecipe } from "./CardRecipe";
 import { Filter } from "./Filter";
+import { NoRecipes } from "./NoRecipes";
 
 export const MyRecipesScreen = () => {
-  //TO add images
-  const addImg = useRef();
-  const handleAddImg = (e) => {
-    e.preventDefault();
-    addImg.current.click();
+  //Open close new recipe modal
+  const { isActive, closeModal, openModal } = useGlobalContext();
+
+  //Save recipes
+  const [recipeList, setRecipeList] = useState([]);
+  //Get Values from new-recipe form
+  const initialState = {
+    id: "",
+    title: "",
+    category: ["meat", "fish", "veggies", "pasta"],
+    ingredients: "",
+    imgUrl: "",
+    elaboration: "",
+  };
+  const [value, setValue] = useState(initialState);
+
+  const { title, category, imgUrl, elaboration, ingredients } = value;
+
+  const handleChange = ({ target }) => {
+    setValue({ ...value, [target.name]: target.value });
   };
 
-  //Open close new recipe modal
-  const { isActive, closeModal } = useGlobalContext();
-  const { openModal } = useGlobalContext();
-
-  //To get data from form
-  const [value, handleInputchange, reset] = useForm({
-    title: "",
-  });
-
-  const { name } = value;
-
-  //To save recipes
-
-  const [recipeList, setRecipeList] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    setRecipeList(value, ...recipeList);
-    console.log(value, recipeList);
-    reset();
+    setRecipeList([value, ...recipeList]);
+    setValue(initialState);
+    closeModal();
   };
 
   return (
@@ -46,8 +46,8 @@ export const MyRecipesScreen = () => {
               type="text"
               placeholder="Recipe Title"
               name="title"
-              value={name}
-              onChange={handleInputchange}
+              value={title}
+              onChange={handleChange}
             />
             <select>
               <option defaultValue>Choose category</option>
@@ -56,24 +56,29 @@ export const MyRecipesScreen = () => {
               <option value="fish">Fish</option>
               <option value="pasta">Pasta</option>
             </select>
-            <input type="text" placeholder="Ingredients" />
-            <textarea type="text" placeholder="Elaboration" />
-            <input type="file" className="img-invisible" ref={addImg} />{" "}
-            <div className="new-recipe__form__img-container">
-              <img
-                src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_960_720.jpg"
-                alt=""
-              />
-            </div>
+            <input
+              type="text"
+              placeholder="Ingredients"
+              name="ingredients"
+              value={ingredients}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              placeholder="Image URL"
+              name="imgUrl"
+              value={imgUrl}
+              onChange={handleChange}
+            />
+            <textarea
+              type="text"
+              placeholder="Elaboration"
+              name="elaboration"
+              value={elaboration}
+              onChange={handleChange}
+            />
             <div className="new-recipe__form__btns">
-              <button className="addImg-btn" onClick={handleAddImg}>
-                <i className="far fa-image"></i>Add an Image
-              </button>
-              <button
-                className="saveRecipe-btn"
-                type="submit"
-                onSubmit={handleSubmit}
-              >
+              <button className="saveRecipe-btn" type="submit">
                 <i className="fas fa-cloud-download-alt"></i>Save Recipe
               </button>
               <button className="cancel-btn" onClick={closeModal}>
@@ -93,8 +98,13 @@ export const MyRecipesScreen = () => {
           </button>
         </div>
         <div className="my-recipes__recipesLayout">
-          <CardRecipe />
-          <CardRecipe /> <CardRecipe />
+          {!recipeList ? (
+            <NoRecipes />
+          ) : (
+            recipeList.map((recipe) => {
+              return <CardRecipe key={Math.random()} {...recipe} />;
+            })
+          )}
         </div>
       </div>
     </>
