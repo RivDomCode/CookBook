@@ -1,8 +1,8 @@
 .cardRecipe {
   display: flex;
   flex-direction: column;
-  width: 33%;
-  height: 500px;
+  width: 45%;
+  height: 100%;
   border-radius: 20px;
   margin-bottom: 40px;
   border: 0.75px solid $shadow;
@@ -19,6 +19,10 @@
   border-radius: 20px 20px 0 0;
 }
 
+.cardRecipe_text-container {
+  padding: 0 24px;
+}
+
 .cardRecipe__title {
   color: $HightLight;
   font-weight: bold;
@@ -28,10 +32,9 @@
 }
 
 .cardRecipe__text {
-  padding: 8px;
   width: 100%;
-  text-align: center;
   font-size: 15px;
+  padding: 8px 0;
 }
 
 .cardRecipe_btnContainer {

@@ -14,14 +14,13 @@ export const MyRecipesScreen = () => {
   const initialState = {
     id: "",
     title: "",
-    category: ["meat", "fish", "veggies", "pasta"],
     ingredients: "",
     imgUrl: "",
     elaboration: "",
   };
   const [value, setValue] = useState(initialState);
 
-  const { title, category, imgUrl, elaboration, ingredients } = value;
+  const { title, imgUrl, elaboration, ingredients } = value;
 
   const handleChange = ({ target }) => {
     setValue({ ...value, [target.name]: target.value });
@@ -49,13 +48,13 @@ export const MyRecipesScreen = () => {
               value={title}
               onChange={handleChange}
             />
-            <select>
-              <option defaultValue>Choose category</option>
-              <option value="Meat">Meat</option>
-              <option value="Veggies">Veggies</option>
-              <option value="fish">Fish</option>
-              <option value="pasta">Pasta</option>
-            </select>
+            <div className="select">
+              <p>Choose a category for your recipe</p>
+              <label>Fish</label>
+              <input type="radio" name="fish" value="fish" />
+              <label>Meat</label>
+              <input type="radio" name="meat" value="meat" />
+            </div>
             <input
               type="text"
               placeholder="Ingredients"
