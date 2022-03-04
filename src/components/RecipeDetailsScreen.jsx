@@ -1,7 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export const RecipeDetailsScreen = () => {
+  const { id } = useParams();
+  console.log(id);
+
   return (
     <div className="recipeDetail">
       <div className="recipeDetail__left">
@@ -11,7 +14,7 @@ export const RecipeDetailsScreen = () => {
         />
       </div>
       <div className="recipeDetail_right">
-        <p className="recipeDetail_right__title">Special Chicken</p>
+        <p className="recipeDetail_right__title">{id}</p>
         <p className="recipeDetail_right__subtitles">Ingredients</p>
         <ul>
           <li>Chicken</li>

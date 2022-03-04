@@ -4,7 +4,7 @@ import { CardRecipe } from "./CardRecipe";
 import { Filter } from "./Filter";
 import { NoRecipes } from "./NoRecipes";
 
-export const MyRecipesScreen = () => {
+export const MyRecipesScreen = ({ category }) => {
   //Open close new recipe modal
   const { isActive, closeModal, openModal } = useGlobalContext();
 
@@ -20,7 +20,7 @@ export const MyRecipesScreen = () => {
   };
   const [value, setValue] = useState(initialState);
 
-  const { title, imgUrl, elaboration, ingredients } = value;
+  const { id, title, imgUrl, elaboration, ingredients } = value;
 
   const handleChange = ({ target }) => {
     setValue({ ...value, [target.name]: target.value });
@@ -80,8 +80,8 @@ export const MyRecipesScreen = () => {
               <button className="saveRecipe-btn" type="submit">
                 <i className="fas fa-cloud-download-alt"></i>Save Recipe
               </button>
-              <button className="cancel-btn" onClick={closeModal}>
-                <i className="fa-solid fa-rectangle-xmark"></i>Cancel
+              <button className="cancel-btn" type="reset" onClick={closeModal}>
+                <i className="fa-solid fa-rectangle-xmark"></i>Cancel{" "}
               </button>
             </div>
           </div>
@@ -97,11 +97,11 @@ export const MyRecipesScreen = () => {
           </button>
         </div>
         <div className="my-recipes__recipesLayout">
-          {!recipeList ? (
+          {recipeList === [] ? (
             <NoRecipes />
           ) : (
             recipeList.map((recipe) => {
-              return <CardRecipe key={Math.random()} {...recipe} />;
+              return <CardRecipe key={category} {...recipe} />;
             })
           )}
         </div>

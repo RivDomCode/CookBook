@@ -30,6 +30,13 @@
   font-weight: 600;
   letter-spacing: 2px;
   font-size: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter_icons {
+  font-size: 24px;
+  text-align: center;
 }
 
 .meat {
@@ -87,6 +94,10 @@
 
 .my-recipes__recipesLayout {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-around;
   min-height: 69px;
 }

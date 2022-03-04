@@ -6,6 +6,11 @@
   text-decoration: none;
 }
 
+@media (max-width: 640px) {
+  * {
+    background-color: red;
+  }
+}
 .navbar {
   background-color: #efefef;
   color: #f8f7f3;
@@ -19,10 +24,17 @@
 .navbar__logo {
   display: flex;
   align-items: center;
+  background-color: .navbar__logo bg;
+  box-shadow: 2px 2px 4px lightgray;
+  padding: 8px;
+  border-radius: 10px;
 }
 
 .navbar__logo__titles {
   color: #5c9bdb;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
   margin-left: 4px;
   font-size: 18px;
 }
@@ -38,7 +50,17 @@
 
 .navbar__links__link {
   color: #000;
-  padding: 24px;
+  background-color: #f8f7f3;
+  padding: 14px;
+  margin-right: 8px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 4px lightgray;
+}
+.navbar__links__link:hover {
+  color: #5c9bdb;
+  text-decoration: underline;
 }
 
 .header-img {
@@ -47,7 +69,7 @@
   height: 400px;
   background: url(../../img/pexels-pixabay-276514.jpg) no-repeat center center fixed;
   background-size: cover;
-  filter: contrast(120%);
+  filter: contrast(110%);
   box-shadow: 2px 2px 4px lightgray;
 }
 
@@ -71,9 +93,18 @@
   box-shadow: 2px 2px 4px lightgray;
   cursor: pointer;
   transition: all 0.2s ease;
+  display: grid;
+  place-items: center;
 }
 .my-recipes__filter__card:hover {
   transform: scale(1.1);
+}
+
+.my-recipes__filter__card p {
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 18px;
 }
 
 .meat {
@@ -88,6 +119,11 @@
 
 .fish {
   background: url("../../img/my-recipes/fabric.jpg");
+  background-size: cover;
+}
+
+.pasta {
+  background: url("../../img/my-recipes/brick.jpg");
   background-size: cover;
 }
 
@@ -125,14 +161,16 @@
 
 .my-recipes__recipesLayout {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
+  min-height: 69px;
 }
 
 .cardRecipe {
   display: flex;
   flex-direction: column;
-  width: 350px;
-  height: 500px;
+  width: 45%;
+  height: 100%;
   border-radius: 20px;
   margin-bottom: 40px;
   border: 0.75px solid #efefef;
@@ -149,6 +187,10 @@
   border-radius: 20px 20px 0 0;
 }
 
+.cardRecipe_text-container {
+  padding: 0 24px;
+}
+
 .cardRecipe__title {
   color: #5c9bdb;
   font-weight: bold;
@@ -158,9 +200,9 @@
 }
 
 .cardRecipe__text {
-  padding: 8px;
-  text-align: center;
+  width: 100%;
   font-size: 15px;
+  padding: 8px 0;
 }
 
 .cardRecipe_btnContainer {
@@ -292,11 +334,23 @@
 }
 
 .new-recipe {
+  position: fixed;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  height: 100%;
+  display: grid;
+  place-items: center;
   font-family: "Be Vietnam Pro", sans-serif, impact;
-  background-color: #f8f7f3;
+  background-color: rgba(248, 247, 243, 0.8);
+  padding: 40px 80px;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+
+.show-new-recipe {
+  visibility: visible;
+  z-index: 10;
 }
 
 .new-recipe__form {
@@ -310,16 +364,7 @@
   box-shadow: 2px 2px 4px lightgray;
   margin-bottom: 24px;
   margin-top: 24px;
-}
-
-.close-btn {
-  font-size: 32px;
-  font-weight: bolder;
-  width: 50px;
-  cursor: pointer;
-  background-color: transparent;
-  color: #5c9bdb;
-  border: none;
+  padding-bottom: 48px;
 }
 
 .new-recipe__form h2 {
@@ -343,10 +388,15 @@
 }
 
 .new-recipe__form__inputs input,
-textarea {
+textarea,
+.select {
   border: none;
   background-color: #f8f7f3;
+  font-family: "Be Vietnam Pro", sans-serif, impact;
   padding: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 16px;
   margin-bottom: 12px;
   border-radius: 10px;
   box-shadow: 2px 2px 4px lightgray;
@@ -355,6 +405,14 @@ textarea {
 
 textarea {
   max-width: 70%;
+}
+
+select {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #000;
+  font-family: "Be Vietnam Pro", sans-serif, impact;
 }
 
 input::placeholder,
@@ -373,33 +431,19 @@ textarea::placeholder {
 .new-recipe__form__btns {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 70%;
   margin-top: 8px;
 }
 
-.addImg-btn {
-  padding: 12px;
-  background-color: #f24141;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 500;
-  box-shadow: 2px 2px 4px lightgray;
-  cursor: pointer;
-}
-.addImg-btn:hover {
-  background-color: #d80f0f;
-}
-
-.fa-image,
-.fa-cloud-download-alt {
+.fa-cloud-download-alt,
+.fa-rectangle-xmark {
   margin-right: 4px;
 }
 
 .saveRecipe-btn {
   padding: 12px;
   background-color: #5c9bdb;
+  width: 48%;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -409,21 +453,88 @@ textarea::placeholder {
   cursor: pointer;
 }
 .saveRecipe-btn:hover {
-  background-color: #2a75c0;
+  background-color: #276baf;
 }
 
-.new-recipe__form__img-container {
-  width: 70%;
-  height: 200px;
+.cancel-btn {
+  padding: 12px;
+  width: 48%;
+  background-color: #f24141;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 2px 2px 4px lightgray;
+  cursor: pointer;
+}
+.cancel-btn:hover {
+  background-color: #a80b0b;
+}
+
+.APIsearch {
+  font-family: "Be Vietnam Pro", sans-serif, impact;
+  padding: 40px 80px;
+  background-color: #f8f7f3;
   display: flex;
+  flex-direction: column;
   margin: auto;
+  justify-content: center;
+  width: 100%;
+}
+
+.APIsearch h3 {
+  color: #5c9bdb;
+  padding: 24px;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.APIsearch form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 60%;
+  padding: 24px;
+  background-color: #fff;
+  margin-top: 8px;
+  box-shadow: 2px 2px 4px lightgray;
+  margin-bottom: 24px;
   margin-top: 24px;
+  margin: auto;
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+}
+
+.APIsearch input {
+  border: none;
+  background-color: #f8f7f3;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px lightgray;
+  width: 70%;
+  margin: auto;
   margin-bottom: 24px;
 }
 
-.new-recipe__form__img-container img {
-  width: 100%;
-  object-fit: cover;
-  max-height: 100%;
+.searchAPI-btn {
+  padding: 12px;
+  background-color: #5c9bdb;
+  color: #fff;
+  border: none;
   border-radius: 10px;
+  width: 60%;
+  margin: auto;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 2px 2px 4px lightgray;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.searchAPI-btn:hover {
+  background-color: #2a75c0;
 }

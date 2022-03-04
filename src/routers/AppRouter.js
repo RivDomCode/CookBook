@@ -8,7 +8,6 @@ import { APISearchScreen } from '../components/APISearchScreen';
 import { Footer } from '../components/Footer';
 import { MyRecipesScreen } from '../components/MyRecipesScreen';
 import { Navbar } from '../components/Navbar';
-import { NewRecipeScreen } from '../components/NewRecipeScreen';
 import { RecipeDetailsScreen } from '../components/RecipeDetailsScreen';
 
 export const AppRouter = () => {
@@ -18,9 +17,8 @@ export const AppRouter = () => {
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<MyRecipesScreen />} />
-                    <Route path="RecipeDetail" element={<RecipeDetailsScreen />} />
+                    <Route path="RecipeDetail/:id" element={<RecipeDetailsScreen />} />
                     <Route path="APISearch" element={<APISearchScreen />} />
-                    <Route path="NewRecipe" element={<NewRecipeScreen />} />
                     <Route path="*" element={<MyRecipesScreen />} />
                 </Routes>
             </BrowserRouter>

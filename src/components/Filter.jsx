@@ -3,26 +3,40 @@ import React from "react";
 export const Filter = () => {
   return (
     <div className="my-recipes__filter">
+      <div className="my-recipes__filter__card fish">
+        <p>
+          <i className="fa-solid fa-border-all filter_icons"></i>All
+        </p>
+      </div>
       <div className="my-recipes__filter__card meat">
-        <p>Meat</p>
+        <p>
+          <i className="fa-solid fa-drumstick-bite filter_icons"></i>Meat
+        </p>
       </div>
       <div className="my-recipes__filter__card veggies">
-        <p>Veggies</p>
+        <p>
+          <i className="fa-solid fa-carrot filter_icons"></i>Veggies
+        </p>
       </div>{" "}
       <div className="my-recipes__filter__card fish">
-        <p>Fish</p>
+        <p>
+          <i className="fa-solid fa-fish filter_icons"></i>Fish
+        </p>
       </div>
       <div className="my-recipes__filter__card pasta">
-        <p>Pasta</p>
+        <p>
+          <i className="fa-solid fa-pizza-slice filter_icons"></i>Italian
+        </p>
       </div>
       <div className="my-recipes__filter__card veggies">
-        <p>Veggies</p>
+        <p>
+          <i className="fa-solid fa-pepper-hot filter_icons"></i>Mexican
+        </p>
       </div>
       <div className="my-recipes__filter__card fish">
-        <p>Fish</p>
-      </div>
-      <div className="my-recipes__filter__card meat">
-        <p>Meat</p>
+        <p>
+          <i className="fa-solid fa-ice-cream filter_icons"></i>Desserts
+        </p>
       </div>
     </div>
   );

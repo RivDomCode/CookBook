@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export const CardRecipe = ({
+  id,
   title,
   elaboration,
   imgUrl,
@@ -26,7 +27,7 @@ export const CardRecipe = ({
             <i className="far fa-trash-alt"></i>Delete
           </button>
           <button className="readMore-btn">
-            <Link to="RecipeDetail" className="readLink">
+            <Link to={`./RecipeDetail/${id}`} className="readLink">
               <i className="fab fa-readme"></i>Read More
             </Link>
           </button>
