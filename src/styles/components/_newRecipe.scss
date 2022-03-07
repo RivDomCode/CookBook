@@ -138,3 +138,22 @@ textarea::placeholder {
     background-color: darken($color: $red, $amount: 25);
   }
 }
+
+.select {
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+}
+
+.radio-btn {
+  display: flex;
+  font-size: 14px;
+  font-weight: bolder;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.radio-inputs {
+  height: 18px;
+}

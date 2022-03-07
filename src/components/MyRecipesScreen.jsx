@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../context/appContext";
 import { CardRecipe } from "./CardRecipe";
 import { Filter } from "./Filter";
-import { NoRecipes } from "./NoRecipes";
+import JSONDATA from "../data/recipeDataBase.json";
 
 export const MyRecipesScreen = ({ category }) => {
   //Open close new recipe modal
@@ -14,13 +14,14 @@ export const MyRecipesScreen = ({ category }) => {
   const initialState = {
     id: "",
     title: "",
+    recipeType: ["Fish", "Meat", "Veggies", "Desserts"],
     ingredients: "",
     imgUrl: "",
     elaboration: "",
   };
   const [value, setValue] = useState(initialState);
 
-  const { id, title, imgUrl, elaboration, ingredients } = value;
+  const { id, title, imgUrl, elaboration, ingredients, recipeType } = value;
 
   const handleChange = ({ target }) => {
     setValue({ ...value, [target.name]: target.value });
@@ -50,10 +51,36 @@ export const MyRecipesScreen = ({ category }) => {
             />
             <div className="select">
               <p>Choose a category for your recipe</p>
-              <label>Fish</label>
-              <input type="radio" name="fish" value="fish" />
-              <label>Meat</label>
-              <input type="radio" name="meat" value="meat" />
+              <div className="radio-btn">
+                <label>Fish</label>
+                <input
+                  type="radio"
+                  name="recipeType"
+                  value={recipeType[0]}
+                  className="radio-inputs"
+                />
+                <label>Meat</label>
+                <input
+                  type="radio"
+                  name="recipeType"
+                  value={recipeType[1]}
+                  className="radio-inputs"
+                />
+                <label>Veggies</label>
+                <input
+                  type="radio"
+                  name="recipeType"
+                  value={recipeType[2]}
+                  className="radio-inputs"
+                />
+                <label>Meat</label>
+                <input
+                  type="radio"
+                  name="recipeType"
+                  value={recipeType[3]}
+                  className="radio-inputs"
+                />
+              </div>
             </div>
             <input
               type="text"
@@ -87,9 +114,10 @@ export const MyRecipesScreen = ({ category }) => {
           </div>
         </form>
       </div>
-
+      s
       <div className="my-recipes">
         <Filter />
+
         <div className="my-recipes__addButton">
           <button className="my-recipes__addButton__btn" onClick={openModal}>
             <i className="fas fa-plus"></i>
@@ -97,13 +125,12 @@ export const MyRecipesScreen = ({ category }) => {
           </button>
         </div>
         <div className="my-recipes__recipesLayout">
-          {recipeList === [] ? (
-            <NoRecipes />
-          ) : (
-            recipeList.map((recipe) => {
-              return <CardRecipe key={category} {...recipe} />;
-            })
-          )}
+          {recipeList.map((recipe) => {
+            return <CardRecipe key={category} {...recipe} />;
+          })}
+          {JSONDATA.map((data) => {
+            return <CardRecipe key={data.id} {...data} />;
+          })}
         </div>
       </div>
     </>

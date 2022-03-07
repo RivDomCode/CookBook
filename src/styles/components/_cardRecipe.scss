@@ -1,8 +1,8 @@
 .cardRecipe {
   display: flex;
   flex-direction: column;
-  width: 45%;
-  height: 100%;
+  width: 40%;
+  height: 600px;
   border-radius: 20px;
   margin-bottom: 40px;
   border: 0.75px solid $shadow;
@@ -82,4 +82,20 @@
 
 .readLink {
   color: $NavBg;
+}
+
+.apicard {
+  height: 100%;
+}
+
+@media (max-width: 935px) {
+  .cardRecipe {
+    width: 80%;
+  }
+}
+
+@media (max-width: 640px) {
+  .cardRecipe {
+    width: 95%;
+  }
 }

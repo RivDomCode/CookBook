@@ -7,17 +7,15 @@ export const CardRecipe = ({
   elaboration,
   imgUrl,
   ingredients,
-  radioValue,
+  recipeType,
 }) => {
   return (
     <div className="cardRecipe">
       <img src={imgUrl} alt="recipp-img" />
       <div className="cardRecipe_text-container">
-        <p className="cardRecipe__title">{title}</p>
+        <p className="cardRecipe__title">{title}</p> {recipeType}
         <p>
-          <strong>Ingredients: </strong>
-          {ingredients}
-          {radioValue}
+          <strong>Ingredients:{ingredients} </strong>
         </p>
         <p className="cardRecipe__text">
           <strong>Elaboration:</strong> {elaboration}
