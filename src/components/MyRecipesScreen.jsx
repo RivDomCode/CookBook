@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../context/appContext";
 import { CardRecipe } from "./CardRecipe";
 import { Filter } from "./Filter";
-import JSONDATA from "../data/recipeDataBase.json";
+import { recipeData } from "../data/recipeDataBase";
 
 export const MyRecipesScreen = ({ category }) => {
   //Open close new recipe modal
@@ -14,14 +14,13 @@ export const MyRecipesScreen = ({ category }) => {
   const initialState = {
     id: "",
     title: "",
-    recipeType: ["Fish", "Meat", "Veggies", "Desserts"],
     ingredients: "",
     imgUrl: "",
     elaboration: "",
   };
   const [value, setValue] = useState(initialState);
 
-  const { id, title, imgUrl, elaboration, ingredients, recipeType } = value;
+  const { id, title, imgUrl, elaboration, ingredients } = value;
 
   const handleChange = ({ target }) => {
     setValue({ ...value, [target.name]: target.value });
@@ -34,6 +33,12 @@ export const MyRecipesScreen = ({ category }) => {
     closeModal();
   };
 
+  //to get value of radio inputs
+  const [recipeCategory, setRecipeCategory] = useState("");
+  const handleRecipeCategoryChange = (e) => {
+    setRecipeCategory(e.target.value);
+  };
+
   return (
     <>
       <div
@@ -44,6 +49,7 @@ export const MyRecipesScreen = ({ category }) => {
             <h2>New Recipe</h2>
             <input
               type="text"
+              className="form-inputs"
               placeholder="Recipe Title"
               name="title"
               value={title}
@@ -55,35 +61,40 @@ export const MyRecipesScreen = ({ category }) => {
                 <label>Fish</label>
                 <input
                   type="radio"
-                  name="recipeType"
-                  value={recipeType[0]}
+                  value="fish"
+                  checked={recipeCategory === "fish"}
+                  onChange={handleRecipeCategoryChange}
                   className="radio-inputs"
                 />
                 <label>Meat</label>
                 <input
                   type="radio"
-                  name="recipeType"
-                  value={recipeType[1]}
+                  value="meat"
+                  checked={recipeCategory === "meat"}
+                  onChange={handleRecipeCategoryChange}
                   className="radio-inputs"
                 />
-                <label>Veggies</label>
+                <label>Veggie</label>
                 <input
                   type="radio"
-                  name="recipeType"
-                  value={recipeType[2]}
+                  value="veggies"
+                  checked={recipeCategory === "veggies"}
+                  onChange={handleRecipeCategoryChange}
                   className="radio-inputs"
                 />
-                <label>Meat</label>
+                <label>Dessert</label>
                 <input
                   type="radio"
-                  name="recipeType"
-                  value={recipeType[3]}
+                  // value="desserts"
+                  checked={recipeCategory === "desserts"}
+                  onChange={handleRecipeCategoryChange}
                   className="radio-inputs"
                 />
               </div>
             </div>
             <input
               type="text"
+              className="form-inputs"
               placeholder="Ingredients"
               name="ingredients"
               value={ingredients}
@@ -91,6 +102,7 @@ export const MyRecipesScreen = ({ category }) => {
             />
             <input
               type="text"
+              className="form-inputs"
               placeholder="Image URL"
               name="imgUrl"
               value={imgUrl}
@@ -98,6 +110,7 @@ export const MyRecipesScreen = ({ category }) => {
             />
             <textarea
               type="text"
+              className="form-inputs"
               placeholder="Elaboration"
               name="elaboration"
               value={elaboration}
@@ -114,7 +127,7 @@ export const MyRecipesScreen = ({ category }) => {
           </div>
         </form>
       </div>
-      s
+
       <div className="my-recipes">
         <Filter />
 
@@ -126,9 +139,9 @@ export const MyRecipesScreen = ({ category }) => {
         </div>
         <div className="my-recipes__recipesLayout">
           {recipeList.map((recipe) => {
-            return <CardRecipe key={category} {...recipe} />;
+            return <CardRecipe key={Math.random()} {...recipe} />;
           })}
-          {JSONDATA.map((data) => {
+          {recipeData.map((data) => {
             return <CardRecipe key={data.id} {...data} />;
           })}
         </div>

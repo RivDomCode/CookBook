@@ -1,4 +1,4 @@
-[
+export const recipeData = [
   {
     "id": 0,
     "title": "Pasta with bassil and tomatoes",

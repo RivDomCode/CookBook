@@ -1,9 +1,12 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const RecipeDetailsScreen = () => {
-  const { id } = useParams();
-  console.log(id);
+  const navigate = useNavigate();
+
+  const handleReturn = () => {
+    navigate(-1);
+  };
 
   return (
     <div className="recipeDetail">
@@ -14,7 +17,7 @@ export const RecipeDetailsScreen = () => {
         />
       </div>
       <div className="recipeDetail_right">
-        <p className="recipeDetail_right__title">{id}</p>
+        <p className="recipeDetail_right__title"></p>
         <p className="recipeDetail_right__subtitles">Ingredients</p>
         <ul>
           <li>Chicken</li>
@@ -32,10 +35,8 @@ export const RecipeDetailsScreen = () => {
           praesen
         </p>
         <div className="recipeDetail_right__container">
-          <button className="readMore-btn">
-            <Link to="MyRecipesScreen" className="readLink">
-              <i className="far fa-arrow-alt-circle-left"></i> Back to Main
-            </Link>{" "}
+          <button className="readMore-btn" onClick={handleReturn}>
+            <i className="far fa-arrow-alt-circle-left"></i> Back to Main
           </button>
           <button className="delete-btn">
             <i className="far fa-trash-alt"></i>Delete
