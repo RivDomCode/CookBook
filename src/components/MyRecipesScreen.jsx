@@ -15,12 +15,13 @@ export const MyRecipesScreen = ({ category }) => {
     id: "",
     title: "",
     ingredients: "",
+    recipeCat: "",
     imgUrl: "",
     elaboration: "",
   };
   const [value, setValue] = useState(initialState);
 
-  const { id, title, imgUrl, elaboration, ingredients } = value;
+  const { id, title, imgUrl, elaboration, ingredients, recipeCat } = value;
 
   const handleChange = ({ target }) => {
     setValue({ ...value, [target.name]: target.value });
@@ -31,12 +32,6 @@ export const MyRecipesScreen = ({ category }) => {
     setRecipeList([value, ...recipeList]);
     setValue(initialState);
     closeModal();
-  };
-
-  //to get value of radio inputs
-  const [recipeCategory, setRecipeCategory] = useState("");
-  const handleRecipeCategoryChange = (e) => {
-    setRecipeCategory(e.target.value);
   };
 
   return (
@@ -55,43 +50,16 @@ export const MyRecipesScreen = ({ category }) => {
               value={title}
               onChange={handleChange}
             />
-            <div className="select">
-              <p>Choose a category for your recipe</p>
-              <div className="radio-btn">
-                <label>Fish</label>
-                <input
-                  type="radio"
-                  value="fish"
-                  checked={recipeCategory === "fish"}
-                  onChange={handleRecipeCategoryChange}
-                  className="radio-inputs"
-                />
-                <label>Meat</label>
-                <input
-                  type="radio"
-                  value="meat"
-                  checked={recipeCategory === "meat"}
-                  onChange={handleRecipeCategoryChange}
-                  className="radio-inputs"
-                />
-                <label>Veggie</label>
-                <input
-                  type="radio"
-                  value="veggies"
-                  checked={recipeCategory === "veggies"}
-                  onChange={handleRecipeCategoryChange}
-                  className="radio-inputs"
-                />
-                <label>Dessert</label>
-                <input
-                  type="radio"
-                  // value="desserts"
-                  checked={recipeCategory === "desserts"}
-                  onChange={handleRecipeCategoryChange}
-                  className="radio-inputs"
-                />
-              </div>
-            </div>
+
+            <input
+              type="text"
+              className="form-inputs inputCat"
+              placeholder="Type a category between meat, fish, veggie or dessert"
+              name="recipeCat"
+              value={recipeCat}
+              onChange={handleChange}
+            />
+
             <input
               type="text"
               className="form-inputs"
@@ -129,7 +97,7 @@ export const MyRecipesScreen = ({ category }) => {
       </div>
 
       <div className="my-recipes">
-        <Filter />
+        <Filter recipeList={recipeList} recipeCat={recipeCat} />
 
         <div className="my-recipes__addButton">
           <button className="my-recipes__addButton__btn" onClick={openModal}>

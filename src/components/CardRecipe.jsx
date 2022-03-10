@@ -1,12 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const CardRecipe = ({ id, title, elaboration, imgUrl, ingredients }) => {
+export const CardRecipe = ({
+  id,
+  title,
+  elaboration,
+  imgUrl,
+  ingredients,
+  recipeCat,
+}) => {
   return (
     <div className="cardRecipe">
       <img src={imgUrl} alt="recipp-img" />
       <div className="cardRecipe_text-container">
-        <p className="cardRecipe__title">{title}</p>
+        <div className="cardRecipe_title-container">
+          <p className="cardRecipe__title">{title}</p>
+          <span className="recipe-cat">{recipeCat}</span>
+        </div>
         <p>
           <strong>Ingredients: </strong>
           {ingredients}

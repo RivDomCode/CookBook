@@ -63,11 +63,15 @@
   margin-bottom: 12px;
   border-radius: 10px;
   box-shadow: 2px 2px 4px lightgray;
-  width: 70%;
+  width: 85%;
+}
+
+.inputCat::placeholder {
+  font-size: 12px;
 }
 
 textarea {
-  max-width: 70%;
+  max-width: 85%;
 }
 
 .select {
