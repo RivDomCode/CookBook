@@ -66,12 +66,15 @@
 }
 
 .APIcategory {
+  color: $NavText;
+  background-color: $NavBg;
   text-align: center;
-  background-color: $greenCat;
-  width: 30%;
   margin: auto;
-  color: $NavBg;
-  font-size: 32px;
-  box-shadow: 2px 2px 4px lightgray;
+  width: 25%;
+  padding: 14px;
+  font-size: 24px;
+  font-weight: bold;
   border-radius: 10px;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 4px lightgray;
 }
