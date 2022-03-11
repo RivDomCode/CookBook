@@ -26,15 +26,20 @@
 .recipeDetail_right__title {
   text-transform: uppercase;
   color: $HightLight;
+  font-family: $secFont;
+  letter-spacing: 1px;
   text-align: center;
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 20px;
-  padding: 8px;
 }
 
 .recipeDetail_right__subtitles {
   padding: 8px;
   font-weight: 700;
+}
+
+.recipeDetaileIngredients {
+  padding: 8px;
 }
 
 .recipeDetail_right ul {

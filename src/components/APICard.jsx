@@ -12,9 +12,8 @@ export const APICard = ({ id, title, img, ingredients, elaboration }) => {
         </div>
         <div className="recipeDetail_right">
           <p className="recipeDetail_right__title">{title}</p>
-          <p className="recipeDetail_right__subtitles">
-            Ingredients: {newIngredients}
-          </p>
+          <p className="recipeDetail_right__subtitles">Ingredients:</p>
+          <p className="recipeDetaileIngredients"> {newIngredients}</p>
           <p className="recipeDetail_right__subtitles">Elaboration</p>
           <p className="recipeDetail_right__text">{elaboration}</p>
           <div className="recipeDetail_right__container"></div>

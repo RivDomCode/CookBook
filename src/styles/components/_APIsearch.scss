@@ -64,3 +64,14 @@
     background-color: darken($color: $HightLight, $amount: 15);
   }
 }
+
+.APIcategory {
+  text-align: center;
+  background-color: $greenCat;
+  width: 30%;
+  margin: auto;
+  color: $NavBg;
+  font-size: 32px;
+  box-shadow: 2px 2px 4px lightgray;
+  border-radius: 10px;
+}
