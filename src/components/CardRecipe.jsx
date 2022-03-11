@@ -9,6 +9,7 @@ export const CardRecipe = ({
   ingredients,
   recipeCat,
 }) => {
+  const maxLength = 180;
   return (
     <div className="cardRecipe">
       <img src={imgUrl} alt="recipp-img" />
@@ -22,8 +23,18 @@ export const CardRecipe = ({
           {ingredients}
         </p>
         <p className="cardRecipe__text">
-          <strong>Elaboration:</strong> {elaboration}
+          <strong>Elaboration:</strong>{" "}
+          {elaboration.length > maxLength ? (
+            <p className="cardRecipe__text">
+              {" "}
+              {`${elaboration.substring(0, maxLength)}`}
+              ...
+            </p>
+          ) : (
+            <p className="cardRecipe__text">{elaboration}</p>
+          )}
         </p>
+
         <div className="cardRecipe_btnContainer">
           <button className="delete-btn">
             <i className="far fa-trash-alt"></i>Delete

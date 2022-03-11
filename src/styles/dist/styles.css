@@ -6,11 +6,6 @@
   text-decoration: none;
 }
 
-@media (max-width: 640px) {
-  * {
-    background-color: red;
-  }
-}
 .navbar {
   background-color: #efefef;
   color: #f8f7f3;
@@ -105,6 +100,13 @@
   font-weight: 600;
   letter-spacing: 2px;
   font-size: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter_icons {
+  font-size: 24px;
+  text-align: center;
 }
 
 .meat {
@@ -161,6 +163,9 @@
 
 .my-recipes__recipesLayout {
   display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
   min-height: 69px;
@@ -169,8 +174,8 @@
 .cardRecipe {
   display: flex;
   flex-direction: column;
-  width: 45%;
-  height: 100%;
+  width: 40%;
+  height: 650px;
   border-radius: 20px;
   margin-bottom: 40px;
   border: 0.75px solid #efefef;
@@ -249,6 +254,34 @@
 
 .readLink {
   color: #fff;
+}
+
+@media (max-width: 935px) {
+  .cardRecipe {
+    width: 80%;
+  }
+}
+@media (max-width: 640px) {
+  .cardRecipe {
+    width: 95%;
+  }
+}
+.cardRecipe_title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.recipe-cat {
+  background-color: #6ebf8b;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 6px;
+  border-radius: 10px;
+  margin-top: 4px;
+  font-size: 12px;
+  box-shadow: 2px 2px 4px lightgray;
 }
 
 .footer {
@@ -387,9 +420,7 @@
   margin: auto;
 }
 
-.new-recipe__form__inputs input,
-textarea,
-.select {
+.form-inputs {
   border: none;
   background-color: #f8f7f3;
   font-family: "Be Vietnam Pro", sans-serif, impact;
@@ -400,19 +431,30 @@ textarea,
   margin-bottom: 12px;
   border-radius: 10px;
   box-shadow: 2px 2px 4px lightgray;
-  width: 70%;
+  width: 85%;
+}
+
+.inputCat::placeholder {
+  font-size: 12px;
 }
 
 textarea {
-  max-width: 70%;
+  max-width: 85%;
 }
 
-select {
-  font-size: 16px;
+.select {
+  border: none;
+  height: 100%;
+  background-color: #f8f7f3;
+  font-family: "Be Vietnam Pro", sans-serif, impact;
+  padding: 12px;
   font-weight: 500;
   letter-spacing: 1px;
-  color: #000;
-  font-family: "Be Vietnam Pro", sans-serif, impact;
+  font-size: 16px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px lightgray;
+  width: 70%;
 }
 
 input::placeholder,
@@ -436,7 +478,8 @@ textarea::placeholder {
 }
 
 .fa-cloud-download-alt,
-.fa-rectangle-xmark {
+.fa-rectangle-xmark,
+.fa-meat {
   margin-right: 4px;
 }
 
@@ -472,6 +515,35 @@ textarea::placeholder {
   background-color: #a80b0b;
 }
 
+.select {
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+}
+
+.radio-btn {
+  display: flex;
+  font-size: 14px;
+  font-weight: bolder;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.radio-inputs {
+  height: 18px;
+}
+
+@media (max-width: 1100px) {
+  .new-recipe__form {
+    width: 85%;
+  }
+}
+@media (max-width: 810px) {
+  .new-recipe__form {
+    width: 100%;
+  }
+}
 .APIsearch {
   font-family: "Be Vietnam Pro", sans-serif, impact;
   padding: 40px 80px;
