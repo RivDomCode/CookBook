@@ -1,20 +1,16 @@
 import React from "react";
 import { recipeData } from "../data/recipeDataBase";
 
-export const Filter = ({ recipeList, recipeCat }) => {
-  const getRecipeCategory = (cat = { recipeCat }) => {
-    console.log("click");
-    return recipeData.filter((recipe) =>
-      recipe.recipeCat.includes({ recipeCat })
-    );
-  };
+export const Filter = () => {
+  // const getRecipeCategory = () => {
+  //   console.log(recipeData);
+  //   console.log("click");
+  //   return recipeData.filter((recipe) => recipe.recipeCat === "fish");
+  // };
 
   return (
     <div className="my-recipes__filter">
-      <div
-        className="my-recipes__filter__card fish"
-        onClick={getRecipeCategory}
-      >
+      <div className="my-recipes__filter__card fish">
         <p>
           <i className="fa-solid fa-border-all filter_icons"></i>
           All
