@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../context/appContext";
 import { CardRecipe } from "./CardRecipe";
 import { recipeData } from "../data/recipeDataBase";
+import { Filter } from "./Filter";
 
 export const MyRecipesScreen = ({ category }) => {
   //Open close new recipe modal
@@ -37,7 +38,6 @@ export const MyRecipesScreen = ({ category }) => {
 
   const [filteredRecipes, setFilteredRecipes] = useState(recipeData);
   const meat = recipeData.filter((recipe) => recipe.recipeCat === "meat");
-  const meat2 = recipeData.filter((recipe) => recipe.recipeCat === "meat");
   const fish = recipeData.filter((recipe) => recipe.recipeCat === "fish");
   const veggie = recipeData.filter((recipe) => recipe.recipeCat === "veggie");
   const dessert = recipeData.filter((recipe) => recipe.recipeCat === "dessert");
@@ -125,38 +125,13 @@ export const MyRecipesScreen = ({ category }) => {
       </div>
 
       <div className="my-recipes">
-        <div className="my-recipes__filter">
-          <div className="my-recipes__filter__card fish" onClick={showAll}>
-            <p>
-              <i className="fa-solid fa-border-all filter_icons"></i>
-              All
-            </p>
-          </div>
-          <div className="my-recipes__filter__card meat" onClick={showMeat}>
-            <p>
-              <i className="fa-solid fa-drumstick-bite filter_icons"></i>Meat
-            </p>
-          </div>
-          <div
-            className="my-recipes__filter__card veggies"
-            onClick={showVeggie}
-          >
-            <p>
-              <i className="fa-solid fa-carrot filter_icons"></i>Veggies
-            </p>
-          </div>{" "}
-          <div className="my-recipes__filter__card fish" onClick={showFish}>
-            <p>
-              <i className="fa-solid fa-fish filter_icons"></i>Fish
-            </p>
-          </div>
-          <div className="my-recipes__filter__card fish" onClick={showDessert}>
-            <p>
-              <i className="fa-solid fa-ice-cream filter_icons"></i>Desserts
-            </p>
-          </div>
-        </div>
-
+        <Filter
+          showAll={showAll}
+          showMeat={showMeat}
+          showFish={showFish}
+          showDessert={showDessert}
+          showVeggie={showVeggie}
+        />
         <div className="my-recipes__addButton">
           <button className="my-recipes__addButton__btn" onClick={openModal}>
             <i className="fas fa-plus"></i>

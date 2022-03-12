@@ -175,7 +175,7 @@
   display: flex;
   flex-direction: column;
   width: 40%;
-  height: 650px;
+  height: 550px;
   border-radius: 20px;
   margin-bottom: 40px;
   border: 0.75px solid #efefef;
@@ -336,15 +336,20 @@
 .recipeDetail_right__title {
   text-transform: uppercase;
   color: #5c9bdb;
+  font-family: "Raleway", sans-serif, impact;
+  letter-spacing: 1px;
   text-align: center;
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 20px;
-  padding: 8px;
 }
 
 .recipeDetail_right__subtitles {
   padding: 8px;
   font-weight: 700;
+}
+
+.recipeDetaileIngredients {
+  padding: 8px;
 }
 
 .recipeDetail_right ul {
@@ -609,4 +614,18 @@ textarea::placeholder {
 }
 .searchAPI-btn:hover {
   background-color: #2a75c0;
+}
+
+.APIcategory {
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+  margin: auto;
+  width: 25%;
+  padding: 14px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 4px lightgray;
 }

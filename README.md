@@ -7,4 +7,4 @@ App to save your own recipes and/or look for cooking inspiration getting recipes
 React
 React Router DOM 6
 SASS
-SweetAlert2
+
