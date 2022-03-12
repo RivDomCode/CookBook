@@ -19,6 +19,8 @@
 
 .fa-burger {
   font-size: 42px;
+  color: $HightLight;
+  transform: rotateX(-25deg);
 }
 
 @keyframes loadingEffect {
