@@ -1,13 +1,6 @@
 import React from "react";
-import { recipeData } from "../data/recipeDataBase";
 
 export const Filter = () => {
-  // const getRecipeCategory = () => {
-  //   console.log(recipeData);
-  //   console.log("click");
-  //   return recipeData.filter((recipe) => recipe.recipeCat === "fish");
-  // };
-
   return (
     <div className="my-recipes__filter">
       <div className="my-recipes__filter__card fish">

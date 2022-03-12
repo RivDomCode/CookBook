@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useGlobalContext } from "../context/appContext";
 import { CardRecipe } from "./CardRecipe";
-import { Filter } from "./Filter";
 import { recipeData } from "../data/recipeDataBase";
 
 export const MyRecipesScreen = ({ category }) => {
@@ -33,6 +32,35 @@ export const MyRecipesScreen = ({ category }) => {
     setValue(initialState);
     closeModal();
   };
+
+  //Filter buttons
+
+  const [filteredRecipes, setFilteredRecipes] = useState(recipeData);
+  const meat = recipeData.filter((recipe) => recipe.recipeCat === "meat");
+  const meat2 = recipeData.filter((recipe) => recipe.recipeCat === "meat");
+  const fish = recipeData.filter((recipe) => recipe.recipeCat === "fish");
+  const veggie = recipeData.filter((recipe) => recipe.recipeCat === "veggie");
+  const dessert = recipeData.filter((recipe) => recipe.recipeCat === "dessert");
+
+  const showAll = () => {
+    setFilteredRecipes(recipeData);
+  };
+
+  const showMeat = () => {
+    setFilteredRecipes(meat);
+  };
+
+  const showFish = () => {
+    setFilteredRecipes(fish);
+  };
+  const showVeggie = () => {
+    setFilteredRecipes(veggie);
+  };
+  const showDessert = () => {
+    setFilteredRecipes(dessert);
+  };
+
+  //End of filter btn logic
 
   return (
     <>
@@ -97,7 +125,37 @@ export const MyRecipesScreen = ({ category }) => {
       </div>
 
       <div className="my-recipes">
-        <Filter recipeList={recipeList} recipeCat={recipeCat} />
+        <div className="my-recipes__filter">
+          <div className="my-recipes__filter__card fish" onClick={showAll}>
+            <p>
+              <i className="fa-solid fa-border-all filter_icons"></i>
+              All
+            </p>
+          </div>
+          <div className="my-recipes__filter__card meat" onClick={showMeat}>
+            <p>
+              <i className="fa-solid fa-drumstick-bite filter_icons"></i>Meat
+            </p>
+          </div>
+          <div
+            className="my-recipes__filter__card veggies"
+            onClick={showVeggie}
+          >
+            <p>
+              <i className="fa-solid fa-carrot filter_icons"></i>Veggies
+            </p>
+          </div>{" "}
+          <div className="my-recipes__filter__card fish" onClick={showFish}>
+            <p>
+              <i className="fa-solid fa-fish filter_icons"></i>Fish
+            </p>
+          </div>
+          <div className="my-recipes__filter__card fish" onClick={showDessert}>
+            <p>
+              <i className="fa-solid fa-ice-cream filter_icons"></i>Desserts
+            </p>
+          </div>
+        </div>
 
         <div className="my-recipes__addButton">
           <button className="my-recipes__addButton__btn" onClick={openModal}>
@@ -109,9 +167,10 @@ export const MyRecipesScreen = ({ category }) => {
           {recipeList.map((recipe) => {
             return <CardRecipe key={Math.random()} {...recipe} />;
           })}
-          {recipeData.map((data) => {
-            return <CardRecipe key={data.id} {...data} />;
-          })}
+          {filteredRecipes &&
+            filteredRecipes.map((data) => {
+              return <CardRecipe key={data.id} {...data} />;
+            })}
         </div>
       </div>
     </>

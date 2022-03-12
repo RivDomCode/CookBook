@@ -1,7 +1,6 @@
 import React from "react";
 import { useFetch } from "../hooks/useFetch";
 import { APICard } from "./APICard";
-import ReactLoading from "react-loading";
 
 export const APIlayout = ({ category, bars }) => {
   const { loading, data } = useFetch(category);
