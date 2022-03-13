@@ -21,7 +21,7 @@ export const MyRecipesScreen = ({ category }) => {
   };
   const [value, setValue] = useState(initialState);
 
-  const { id, title, imgUrl, elaboration, ingredients, recipeCat } = value;
+  const { title, imgUrl, elaboration, ingredients, recipeCat } = value;
 
   const handleChange = ({ target }) => {
     setValue({ ...value, [target.name]: target.value });

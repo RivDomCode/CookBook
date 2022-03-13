@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 export const APICard = ({ id, title, img, ingredients, elaboration }) => {
   let newIngredients = ingredients.join(", ");

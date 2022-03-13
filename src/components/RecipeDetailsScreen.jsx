@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { getRecipeById } from "../helpers/getRecipeById";
 
 export const RecipeDetailsScreen = ({ history }) => {
   const navigate = useNavigate();
@@ -10,7 +9,7 @@ export const RecipeDetailsScreen = ({ history }) => {
 
   const location = useLocation();
   const recipeDetailData = location.state;
-  const { id, title, elaboration, ingredients, imgUrl } = recipeDetailData;
+  const { title, elaboration, ingredients, imgUrl } = recipeDetailData;
 
   return (
     <div className="recipeDetail">
