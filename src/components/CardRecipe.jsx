@@ -8,8 +8,12 @@ export const CardRecipe = ({
   imgUrl,
   ingredients,
   recipeCat,
+  deleteRecipe,
 }) => {
   const maxLength = 180;
+
+  const myData = { id, title, elaboration, ingredients, imgUrl };
+
   return (
     <div className="cardRecipe">
       <img src={imgUrl} alt="recipp-img" />
@@ -22,25 +26,27 @@ export const CardRecipe = ({
           <strong>Ingredients: </strong>
           {ingredients}
         </p>
-        <p className="cardRecipe__text">
+        <div className="cardRecipe__text">
           <strong>Elaboration:</strong>{" "}
           {elaboration.length > maxLength ? (
-            <p className="cardRecipe__text">
-              {" "}
+            <div className="cardRecipe__text">
               {`${elaboration.substring(0, maxLength)}`}
               ...
-            </p>
+            </div>
           ) : (
-            <p className="cardRecipe__text">{elaboration}</p>
+            <div className="cardRecipe__text">{elaboration}</div>
           )}
-        </p>
-
+        </div>
         <div className="cardRecipe_btnContainer">
-          <button className="delete-btn">
+          <button className="delete-btn" onClick={() => deleteRecipe(id)}>
             <i className="far fa-trash-alt"></i>Delete
           </button>
           <button className="readMore-btn">
-            <Link to={`./RecipeDetail/${id}`} className="readLink">
+            <Link
+              to={`./RecipeDetail/${id}`}
+              state={myData}
+              className="readLink"
+            >
               <i className="fab fa-readme"></i>Read More
             </Link>
           </button>

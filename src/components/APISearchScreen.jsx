@@ -22,7 +22,7 @@ export const APISearchScreen = () => {
   return (
     <div className="APIsearch">
       <form onSubmit={handleSearchSubmit}>
-        <h3>GET INSPIRATION FROM SPOONACULAR API</h3>
+        <h3>GET INSPIRATION FROM TheMealDB API</h3>
         <input
           type="text"
           placeholder="Type your ingredients here..."

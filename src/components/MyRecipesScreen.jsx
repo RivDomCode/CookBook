@@ -62,6 +62,13 @@ export const MyRecipesScreen = ({ category }) => {
 
   //End of filter btn logic
 
+  //Delete Recipe
+  const deleteRecipe = (id) => {
+    console.log(id);
+    filteredRecipes.filter((recipe) => recipe.id !== id);
+    console.log(filteredRecipes);
+  };
+
   return (
     <>
       <div
@@ -144,7 +151,13 @@ export const MyRecipesScreen = ({ category }) => {
           })}
           {filteredRecipes &&
             filteredRecipes.map((data) => {
-              return <CardRecipe key={data.id} {...data} />;
+              return (
+                <CardRecipe
+                  key={data.id}
+                  {...data}
+                  deleteRecipe={deleteRecipe}
+                />
+              );
             })}
         </div>
       </div>
