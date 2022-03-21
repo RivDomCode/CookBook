@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useGlobalContext } from "../context/appContext";
 import { CardRecipe } from "./CardRecipe";
-import { recipeData } from "../data/recipeDataBase";
 import { Filter } from "./Filter";
 
 export const MyRecipesScreen = ({ category }) => {
@@ -36,38 +35,37 @@ export const MyRecipesScreen = ({ category }) => {
 
   //Filter buttons
 
-  const [filteredRecipes, setFilteredRecipes] = useState(recipeData);
-  const meat = recipeData.filter((recipe) => recipe.recipeCat === "meat");
-  const fish = recipeData.filter((recipe) => recipe.recipeCat === "fish");
-  const veggie = recipeData.filter((recipe) => recipe.recipeCat === "veggie");
-  const dessert = recipeData.filter((recipe) => recipe.recipeCat === "dessert");
+  const meat = recipeList.filter((recipe) => recipe.recipeCat === "meat");
+  const fish = recipeList.filter((recipe) => recipe.recipeCat === "fish");
+  const veggie = recipeList.filter((recipe) => recipe.recipeCat === "veggie");
+  const dessert = recipeList.filter((recipe) => recipe.recipeCat === "dessert");
 
   const showAll = () => {
-    setFilteredRecipes(recipeData);
+    setRecipeList(recipeList);
   };
 
   const showMeat = () => {
-    setFilteredRecipes(meat);
+    setRecipeList(meat);
   };
 
   const showFish = () => {
-    setFilteredRecipes(fish);
+    setRecipeList(fish);
   };
   const showVeggie = () => {
-    setFilteredRecipes(veggie);
+    setRecipeList(veggie);
   };
   const showDessert = () => {
-    setFilteredRecipes(dessert);
+    setRecipeList(dessert);
   };
 
   //End of filter btn logic
 
   //Delete Recipe
-  const deleteRecipe = (id) => {
-    console.log(id);
-    filteredRecipes.filter((recipe) => recipe.id !== id);
-    console.log(filteredRecipes);
-  };
+  // const deleteRecipe = (id) => {
+  //   console.log(id);
+  //   filteredRecipes.filter((recipe) => recipe.id !== id);
+  //   console.log(filteredRecipes);
+  // };
 
   return (
     <>
@@ -149,16 +147,6 @@ export const MyRecipesScreen = ({ category }) => {
           {recipeList.map((recipe) => {
             return <CardRecipe key={Math.random()} {...recipe} />;
           })}
-          {filteredRecipes &&
-            filteredRecipes.map((data) => {
-              return (
-                <CardRecipe
-                  key={data.id}
-                  {...data}
-                  deleteRecipe={deleteRecipe}
-                />
-              );
-            })}
         </div>
       </div>
     </>

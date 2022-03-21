@@ -14,9 +14,12 @@ export const CardRecipe = ({
 
   const myData = { id, title, elaboration, ingredients, imgUrl };
 
+  const noimg =
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png";
+
   return (
     <div className="cardRecipe">
-      <img src={imgUrl} alt="recipp-img" />
+      <img src={imgUrl ? imgUrl : noimg} alt="recipp-img" />
       <div className="cardRecipe_text-container">
         <div className="cardRecipe_title-container">
           <p className="cardRecipe__title">{title}</p>
