@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useGlobalContext } from "../context/appContext";
+import { generateId } from "../helpers/generateId";
 import { CardRecipe } from "./CardRecipe";
 import { Filter } from "./Filter";
 
@@ -11,7 +12,7 @@ export const MyRecipesScreen = ({ category }) => {
   const [recipeList, setRecipeList] = useState([]);
   //Get Values from new-recipe form
   const initialState = {
-    id: "",
+    id: generateId(),
     title: "",
     ingredients: "",
     recipeCat: "",
@@ -34,7 +35,6 @@ export const MyRecipesScreen = ({ category }) => {
   };
 
   //Filter buttons
-
   const meat = recipeList.filter((recipe) => recipe.recipeCat === "meat");
   const fish = recipeList.filter((recipe) => recipe.recipeCat === "fish");
   const veggie = recipeList.filter((recipe) => recipe.recipeCat === "veggie");
@@ -57,7 +57,6 @@ export const MyRecipesScreen = ({ category }) => {
   const showDessert = () => {
     setRecipeList(dessert);
   };
-
   //End of filter btn logic
 
   //Delete Recipe
@@ -145,7 +144,7 @@ export const MyRecipesScreen = ({ category }) => {
         </div>
         <div className="my-recipes__recipesLayout">
           {recipeList.map((recipe) => {
-            return <CardRecipe key={Math.random()} {...recipe} />;
+            return <CardRecipe key={recipe.id} {...recipe} />;
           })}
         </div>
       </div>
