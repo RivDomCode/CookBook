@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../context/appContext";
 import { generateId } from "../helpers/generateId";
 import { CardRecipe } from "./CardRecipe";
@@ -22,6 +22,18 @@ export const MyRecipesScreen = ({ category }) => {
   const [value, setValue] = useState(initialState);
 
   const { title, imgUrl, elaboration, ingredients, recipeCat } = value;
+
+  //when app load it bring recipe list from LS
+  useEffect(() => {
+    const recipeListFromLS =
+      JSON.parse(localStorage.getItem("recipeList")) ?? [];
+    setRecipeList(recipeListFromLS);
+  }, []);
+
+  //Save changes on LS
+  useEffect(() => {
+    localStorage.setItem("recipeList", JSON.stringify(recipeList));
+  }, [recipeList]);
 
   const handleChange = ({ target }) => {
     setValue({ ...value, [target.name]: target.value });
