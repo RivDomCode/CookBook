@@ -59,19 +59,6 @@ export const MyRecipesScreen = ({ category }) => {
 
   //Delete Recipes
   const deleteRecipe = (id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#5c9bdb",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
-      }
-    });
     const updatedRecipeList = recipeList.filter((recipe) => recipe.id !== id);
 
     setRecipeList(updatedRecipeList);

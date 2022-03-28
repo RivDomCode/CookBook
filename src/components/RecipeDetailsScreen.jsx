@@ -9,7 +9,8 @@ export const RecipeDetailsScreen = ({ history }) => {
 
   const location = useLocation();
   const recipeDetailData = location.state;
-  const { title, elaboration, ingredients, imgUrl } = recipeDetailData;
+  const { title, elaboration, ingredients, imgUrl, deleteRecipe } =
+    recipeDetailData;
 
   return (
     <div className="recipeDetail">
