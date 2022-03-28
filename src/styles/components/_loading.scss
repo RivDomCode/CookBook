@@ -1,5 +1,5 @@
 .loading {
-  background-color: $NavText;
+  background-color: transparent;
   padding: 12px;
   border-radius: 50%;
   display: flex;
@@ -7,21 +7,16 @@
   align-items: center;
   margin-top: 16px;
   margin-bottom: 16px;
+  border: 2px dotted $NavText;
   opacity: 1;
   animation-name: loadingEffect;
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
 
-.loading p {
-  color: $NavBg;
-  padding: 8px;
-}
-
 .fa-burger {
   font-size: 42px;
   color: $HightLight;
-  transform: rotateX(-25deg);
 }
 
 @keyframes loadingEffect {

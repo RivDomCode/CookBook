@@ -21,9 +21,7 @@ export const RecipeDetailsScreen = ({ history }) => {
         <p className="recipeDetail_right__subtitles">Ingredients</p>
         <ul>{ingredients}</ul>
         <p className="recipeDetail_right__subtitles">Elaboration</p>
-        <p className="recipeDetail_right__text">
-          {elaboration}i voluptate molestias non vel ipsam. Consectetur praesen
-        </p>
+        <p className="recipeDetail_right__text">{elaboration}</p>
         <div className="recipeDetail_right__container">
           <button className="readMore-btn" onClick={handleReturn}>
             <i className="far fa-arrow-alt-circle-left"></i> Back to Main

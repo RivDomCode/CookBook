@@ -44,7 +44,6 @@ export const MyRecipesScreen = ({ category }) => {
       recipeCat !== "veggie" &&
       recipeCat !== "dessert"
     ) {
-      console.log("category should be ...");
       Swal.fire({
         title: "Type a category between fish, meat, veggie or dessert, please!",
         icon: "error",
@@ -58,30 +57,25 @@ export const MyRecipesScreen = ({ category }) => {
     closeModal();
   };
 
-  //Filter buttons
-  const meat = recipeList.filter((recipe) => recipe.recipeCat === "meat");
-  const fish = recipeList.filter((recipe) => recipe.recipeCat === "fish");
-  const veggie = recipeList.filter((recipe) => recipe.recipeCat === "veggie");
-  const dessert = recipeList.filter((recipe) => recipe.recipeCat === "dessert");
+  //Delete Recipes
+  const deleteRecipe = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#5c9bdb",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
+    });
+    const updatedRecipeList = recipeList.filter((recipe) => recipe.id !== id);
 
-  const showAll = () => {
-    setRecipeList(recipeList);
+    setRecipeList(updatedRecipeList);
   };
-
-  const showMeat = () => {
-    setRecipeList(meat);
-  };
-
-  const showFish = () => {
-    setRecipeList(fish);
-  };
-  const showVeggie = () => {
-    setRecipeList(veggie);
-  };
-  const showDessert = () => {
-    setRecipeList(dessert);
-  };
-  //End of filter btn logic
 
   return (
     <>
@@ -146,13 +140,7 @@ export const MyRecipesScreen = ({ category }) => {
       </div>
 
       <div className="my-recipes">
-        <Filter
-          showAll={showAll}
-          showMeat={showMeat}
-          showFish={showFish}
-          showDessert={showDessert}
-          showVeggie={showVeggie}
-        />
+        <Filter recipeList={recipeList} setRecipeList={setRecipeList} />
         <div className="my-recipes__addButton">
           <button className="my-recipes__addButton__btn" onClick={openModal}>
             <i className="fas fa-plus"></i>
@@ -161,7 +149,13 @@ export const MyRecipesScreen = ({ category }) => {
         </div>
         <div className="my-recipes__recipesLayout">
           {recipeList.map((recipe) => {
-            return <CardRecipe key={recipe.id} {...recipe} />;
+            return (
+              <CardRecipe
+                key={recipe.id}
+                {...recipe}
+                deleteRecipe={deleteRecipe}
+              />
+            );
           })}
         </div>
       </div>

@@ -8,13 +8,18 @@ export const CardRecipe = ({
   imgUrl,
   ingredients,
   recipeCat,
+  deleteRecipe,
 }) => {
   const maxLength = 180;
 
-  const myData = { id, title, elaboration, ingredients, imgUrl };
+  const myData = { id, title, elaboration, ingredients, imgUrl, deleteRecipe };
 
   const noimg =
     "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png";
+
+  const handleDelete = () => {
+    deleteRecipe(id);
+  };
 
   return (
     <div className="cardRecipe">
@@ -40,7 +45,7 @@ export const CardRecipe = ({
           )}
         </div>
         <div className="cardRecipe_btnContainer">
-          <button type="button" className="delete-btn">
+          <button type="button" className="delete-btn" onClick={handleDelete}>
             <i className="far fa-trash-alt"></i>Delete
           </button>
           <button className="readMore-btn">

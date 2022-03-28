@@ -1,12 +1,31 @@
 import React from "react";
 
-export const Filter = ({
-  showAll,
-  showMeat,
-  showFish,
-  showVeggie,
-  showDessert,
-}) => {
+export const Filter = ({ setRecipeList, recipeList }) => {
+  //Filter buttons
+  const meat = recipeList.filter((recipe) => recipe.recipeCat === "meat");
+  const fish = recipeList.filter((recipe) => recipe.recipeCat === "fish");
+  const veggie = recipeList.filter((recipe) => recipe.recipeCat === "veggie");
+  const dessert = recipeList.filter((recipe) => recipe.recipeCat === "dessert");
+
+  const showAll = () => {
+    setRecipeList(recipeList);
+  };
+
+  const showMeat = () => {
+    setRecipeList(meat);
+  };
+
+  const showFish = () => {
+    setRecipeList(fish);
+  };
+  const showVeggie = () => {
+    setRecipeList(veggie);
+  };
+  const showDessert = () => {
+    setRecipeList(dessert);
+  };
+  //End of filter btn logic
+
   return (
     <div className="my-recipes__filter">
       <div className="my-recipes__filter__card fish" onClick={showAll}>
