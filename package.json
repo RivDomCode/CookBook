@@ -15,7 +15,7 @@
     "react-select": "^5.2.2",
     "react-use-uuid": "^2.0.1",
     "sass": "^1.49.0",
-    "sweetalert2": "^11.4.4",
+    "sweetalert2": "^11.4.7",
     "sweetalert2-react-content": "^4.2.0",
     "uniqid": "^5.4.0",
     "uuid": "^8.3.2",

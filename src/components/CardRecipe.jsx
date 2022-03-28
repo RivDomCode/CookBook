@@ -8,7 +8,6 @@ export const CardRecipe = ({
   imgUrl,
   ingredients,
   recipeCat,
-  deleteRecipe,
 }) => {
   const maxLength = 180;
 
@@ -41,7 +40,7 @@ export const CardRecipe = ({
           )}
         </div>
         <div className="cardRecipe_btnContainer">
-          <button className="delete-btn" onClick={() => deleteRecipe(id)}>
+          <button type="button" className="delete-btn">
             <i className="far fa-trash-alt"></i>Delete
           </button>
           <button className="readMore-btn">

@@ -3,11 +3,11 @@ import { useGlobalContext } from "../context/appContext";
 import { generateId } from "../helpers/generateId";
 import { CardRecipe } from "./CardRecipe";
 import { Filter } from "./Filter";
+import Swal from "sweetalert2";
 
 export const MyRecipesScreen = ({ category }) => {
   //Open close new recipe modal
   const { isActive, closeModal, openModal } = useGlobalContext();
-
   //Save recipes
   const [recipeList, setRecipeList] = useState([]);
   //Get Values from new-recipe form
@@ -29,6 +29,30 @@ export const MyRecipesScreen = ({ category }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //form validations
+    if (title === "" || ingredients === "" || elaboration === "") {
+      Swal.fire({
+        title: "All fields are required!",
+        icon: "error",
+        confirmButtonColor: "#5c9bdb",
+        confirmButtonText: "Cool!",
+      });
+      return;
+    } else if (
+      recipeCat !== "fish" &&
+      recipeCat !== "meat" &&
+      recipeCat !== "veggie" &&
+      recipeCat !== "dessert"
+    ) {
+      console.log("category should be ...");
+      Swal.fire({
+        title: "Type a category between fish, meat, veggie or dessert, please!",
+        icon: "error",
+        confirmButtonColor: "#5c9bdb",
+        confirmButtonText: "Understood!",
+      });
+      return;
+    }
     setRecipeList([value, ...recipeList]);
     setValue(initialState);
     closeModal();
@@ -58,13 +82,6 @@ export const MyRecipesScreen = ({ category }) => {
     setRecipeList(dessert);
   };
   //End of filter btn logic
-
-  //Delete Recipe
-  // const deleteRecipe = (id) => {
-  //   console.log(id);
-  //   filteredRecipes.filter((recipe) => recipe.id !== id);
-  //   console.log(filteredRecipes);
-  // };
 
   return (
     <>

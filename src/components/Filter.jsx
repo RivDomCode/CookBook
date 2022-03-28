@@ -25,12 +25,12 @@ export const Filter = ({
           <i className="fa-solid fa-carrot filter_icons"></i>Veggies
         </p>
       </div>{" "}
-      <div className="my-recipes__filter__card fish" onClick={showFish}>
+      <div className="my-recipes__filter__card meat" onClick={showFish}>
         <p>
           <i className="fa-solid fa-fish filter_icons"></i>Fish
         </p>
       </div>
-      <div className="my-recipes__filter__card fish" onClick={showDessert}>
+      <div className="my-recipes__filter__card veggies" onClick={showDessert}>
         <p>
           <i className="fa-solid fa-ice-cream filter_icons"></i>Desserts
         </p>
