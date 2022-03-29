@@ -44,7 +44,7 @@ export const CardRecipe = ({
           <p className="cardRecipe__title">{title}</p>
           <span className="recipe-cat">{recipeCat}</span>
         </div>
-        <p>
+        <p className="cardRecipe__text">
           <strong>Ingredients: </strong>
           {ingredients}
         </p>

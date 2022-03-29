@@ -49,6 +49,7 @@
   background-color: $red;
   color: $NavBg;
   border: none;
+  width: 40%;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 500;
@@ -69,6 +70,7 @@
   background-color: $HightLight;
   color: $NavBg;
   border: none;
+  width: 40%;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 500;
@@ -84,7 +86,7 @@
   color: $NavBg;
 }
 
-@media (max-width: 935px) {
+@media (max-width: 1165px) {
   .cardRecipe {
     width: 80%;
   }
@@ -92,7 +94,7 @@
 
 @media (max-width: 640px) {
   .cardRecipe {
-    width: 95%;
+    width: 100%;
   }
 }
 

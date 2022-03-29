@@ -24,11 +24,8 @@ export const RecipeDetailsScreen = ({ history }) => {
         <p className="recipeDetail_right__subtitles">Elaboration</p>
         <p className="recipeDetail_right__text">{elaboration}</p>
         <div className="recipeDetail_right__container">
-          <button className="readMore-btn" onClick={handleReturn}>
+          <button className="readMore-btn back" onClick={handleReturn}>
             <i className="far fa-arrow-alt-circle-left"></i> Back to Main
-          </button>
-          <button className="delete-btn">
-            <i className="far fa-trash-alt"></i>Delete
           </button>
         </div>
       </div>

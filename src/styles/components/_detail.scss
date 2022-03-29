@@ -52,11 +52,14 @@
 }
 
 .recipeDetail_right__container {
-  display: flex;
-  justify-content: space-around;
   padding: 16px;
 }
 
 .fa-arrow-alt-circle-left {
   margin-right: 4px;
+}
+
+.back {
+  width: 100%;
+  margin-top: 24px;
 }
