@@ -6,6 +6,11 @@
   text-decoration: none;
 }
 
+.swal2-popup {
+  font-family: "Raleway", serif !important;
+  letter-spacing: 1px;
+}
+
 .navbar {
   background-color: #efefef;
   color: #f8f7f3;
@@ -69,7 +74,7 @@
 }
 
 .my-recipes {
-  padding: 40px 80px;
+  padding: 40px 40px;
   font-family: "Be Vietnam Pro", sans-serif, impact;
   background-color: #f8f7f3;
 }
@@ -222,6 +227,7 @@
   background-color: #f24141;
   color: #fff;
   border: none;
+  width: 40%;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 500;
@@ -242,6 +248,7 @@
   background-color: #5c9bdb;
   color: #fff;
   border: none;
+  width: 40%;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 500;
@@ -256,14 +263,14 @@
   color: #fff;
 }
 
-@media (max-width: 935px) {
+@media (max-width: 1165px) {
   .cardRecipe {
     width: 80%;
   }
 }
 @media (max-width: 640px) {
   .cardRecipe {
-    width: 95%;
+    width: 100%;
   }
 }
 .cardRecipe_title-container {
@@ -362,13 +369,16 @@
 }
 
 .recipeDetail_right__container {
-  display: flex;
-  justify-content: space-around;
   padding: 16px;
 }
 
 .fa-arrow-alt-circle-left {
   margin-right: 4px;
+}
+
+.back {
+  width: 100%;
+  margin-top: 24px;
 }
 
 .new-recipe {
@@ -572,7 +582,7 @@ textarea::placeholder {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  width: 60%;
+  width: 90%;
   padding: 24px;
   background-color: #fff;
   margin-top: 8px;
@@ -628,4 +638,48 @@ textarea::placeholder {
   border-radius: 10px;
   text-transform: uppercase;
   box-shadow: 2px 2px 4px lightgray;
+}
+
+.loading {
+  background-color: transparent;
+  padding: 12px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border: 2px dotted #000;
+  opacity: 1;
+  animation-name: loadingEffect;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.fa-burger {
+  font-size: 42px;
+  color: #5c9bdb;
+}
+
+@keyframes loadingEffect {
+  0% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+  25% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  75% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale(1.2);
+  }
 }

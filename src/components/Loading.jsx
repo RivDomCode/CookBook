@@ -1,9 +1,9 @@
-import React from "react";
+import { DualRing } from "react-spinners-css";
 
 export const Loading = () => {
   return (
     <div className="loading">
-      <i className="fa-solid fa-burger"></i>
+      <DualRing color="#5c9bdb" size={100} />
     </div>
   );
 };

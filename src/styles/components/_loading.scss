@@ -7,39 +7,4 @@
   align-items: center;
   margin-top: 16px;
   margin-bottom: 16px;
-  border: 2px dotted $NavText;
-  opacity: 1;
-  animation-name: loadingEffect;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-}
-
-.fa-burger {
-  font-size: 42px;
-  color: $HightLight;
-}
-
-@keyframes loadingEffect {
-  0% {
-    opacity: 0.25;
-    transform: scale(0.8);
-  }
-
-  25% {
-    opacity: 0.5;
-    transform: scale(0.9);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1);
-  }
-  75% {
-    opacity: 0.8;
-    transform: scale(1.1);
-  }
-
-  100% {
-    opacity: 0.9;
-    transform: scale(1.2);
-  }
 }
