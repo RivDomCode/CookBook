@@ -2,7 +2,7 @@
   padding: 40px 40px;
   font-family: $mainFont;
   background-color: $bg;
-  height: 100%;
+  min-height: 49vh;
 }
 
 .my-recipes__filter {
@@ -38,26 +38,6 @@
 .filter_icons {
   font-size: 24px;
   text-align: center;
-}
-
-.meat {
-  background: url("../../img/my-recipes/paper.jpg");
-  background-size: cover;
-}
-
-.veggies {
-  background: url("../../img/my-recipes/wood.jpg");
-  background-size: cover;
-}
-
-.fish {
-  background: url("../../img/my-recipes/fabric.jpg");
-  background-size: cover;
-}
-
-.pasta {
-  background: url("../../img/my-recipes/brick.jpg");
-  background-size: cover;
 }
 
 .my-recipes__addButton {

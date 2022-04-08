@@ -1,9 +1,7 @@
-import { DualRing } from "react-spinners-css";
-
 export const Loading = () => {
   return (
-    <div className="loading">
-      <DualRing color="#5c9bdb" size={100} />
+    <div className="spinner-container">
+      <div className="loading-spinner"></div>
     </div>
   );
 };

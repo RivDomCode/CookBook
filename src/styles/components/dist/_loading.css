@@ -1,10 +1,19 @@
-.loading {
-  background-color: transparent;
-  padding: 12px;
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  margin-top: 30px;
+  width: 50px;
+  height: 50px;
+  border: 10px solid lightgray;
+  /* Light grey */
+  border-top: 10px solid #5c9bdb;
+  /* Black */
   border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  animation: spinner 1.5s linear infinite;
 }
