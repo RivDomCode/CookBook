@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../context/appContext";
 import { generateId } from "../helpers/generateId";
 import { CardRecipe } from "./CardRecipe";
-import { Filter } from "./Filter";
 import Swal from "sweetalert2";
 
 export const MyRecipesScreen = ({ category }) => {
@@ -139,7 +138,6 @@ export const MyRecipesScreen = ({ category }) => {
       </div>
 
       <div className="my-recipes">
-        {/* <Filter recipeList={recipeList} setRecipeList={setRecipeList} /> */}
         <div className="my-recipes__addButton">
           <button className="my-recipes__addButton__btn" onClick={openModal}>
             <i className="fas fa-plus"></i>
