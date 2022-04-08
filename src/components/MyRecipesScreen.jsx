@@ -139,7 +139,7 @@ export const MyRecipesScreen = ({ category }) => {
       </div>
 
       <div className="my-recipes">
-        <Filter recipeList={recipeList} setRecipeList={setRecipeList} />
+        {/* <Filter recipeList={recipeList} setRecipeList={setRecipeList} /> */}
         <div className="my-recipes__addButton">
           <button className="my-recipes__addButton__btn" onClick={openModal}>
             <i className="fas fa-plus"></i>
