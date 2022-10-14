@@ -2,7 +2,25 @@
   padding: 40px 80px;
   font-family: $mainFont;
   display: flex;
+  justify-content: space-between;
   background-color: $bg;
+}
+
+@media(max-width:900px) {
+  .recipeDetail{
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .recipeDetail__left{
+    min-width: 100%;
+  }
+
+  .recipeDetail_right{
+    min-width: 100%;
+    margin-top: 24px;
+  }
 }
 
 .recipeDetail__left {
@@ -12,15 +30,13 @@
 .recipeDetail__left img {
   width: 100%;
   object-fit: cover;
-  height: 50vh;
+  height: 68vh;
   border-radius: 15px;
   box-shadow: 2px 2px 4px lightgray;
 }
 
 .recipeDetail_right {
   width: 45%;
-  padding: 8px;
-  margin-left: 40px;
 }
 
 .recipeDetail_right__title {

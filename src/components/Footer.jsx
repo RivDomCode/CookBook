@@ -5,8 +5,8 @@ export const Footer = () => {
     <div className="footer">
       <p>
         Check more projects out in my Portfolio Site:{" "}
-        <a href="https://www.rivdom.dev/" target="_blank" rel="noreferrer">
-          www.rivdom.dev
+        <a href="https://www.pedrorivas.dev/" target="_blank" rel="noreferrer">
+          www.pedrorivas.dev
         </a>
       </p>
     </div>
