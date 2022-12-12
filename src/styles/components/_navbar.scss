@@ -11,7 +11,7 @@
 .navbar__logo {
   display: flex;
   align-items: center;
-  background-color: &bg;
+  background-color: $bg;
   box-shadow: 2px 2px 4px lightgray;
   padding: 8px;
   border-radius: 10px;
@@ -59,4 +59,26 @@
   background-size: cover;
   filter: contrast(110%);
   box-shadow: 2px 2px 4px lightgray;
+}
+
+@media(max-width: 600px){
+  .navbar{
+    padding: 8px;
+  }
+
+  .navbar__logo__titles{
+    font-size: 12px;
+  }
+.navbar__logo {
+  padding: 4px;
+}
+
+.navbar__logo__img {
+  height: 25px;
+}
+  
+.navbar__links__link{
+  font-size: 12px;
+  padding: 6px
+}
 }

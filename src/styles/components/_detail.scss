@@ -79,3 +79,9 @@
   width: 100%;
   margin-top: 24px;
 }
+
+@media(max-width: 600px){
+  .recipeDetail {
+    padding: 20px;
+  }
+}

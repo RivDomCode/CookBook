@@ -79,3 +79,22 @@
   text-transform: uppercase;
   box-shadow: 2px 2px 4px lightgray;
 }
+
+
+@media(max-width: 600px){
+  .APIsearch{
+    padding: 20px;
+  }
+
+  .APIsearch form{
+    width: 100%;
+  }
+
+  .APIsearch input {
+    width: 100%;
+  }
+
+  .APIcategory{
+    font-size: 14px;
+  }
+}
